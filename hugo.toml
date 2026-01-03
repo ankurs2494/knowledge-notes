@@ -1,0 +1,4 @@
+baseURL = 'https://ankursingh.netflify.app/'
+languageCode = 'en-us'
+title = 'My Tech Knowledge Notes'
+theme = "PaperMod"

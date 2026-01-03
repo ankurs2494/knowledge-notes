@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>My Tech Knowledge Notes</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on My Tech Knowledge Notes</description>
+    <generator>Hugo -- 0.154.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 03 Jan 2026 21:32:16 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Browser Caching</title>
+      <link>http://localhost:1313/notes/browser-caching/</link>
+      <pubDate>Sat, 03 Jan 2026 21:32:16 +0100</pubDate>
+      <guid>http://localhost:1313/notes/browser-caching/</guid>
+      <description>&lt;h2 id=&#34;what-is-browser-caching&#34;&gt;What is browser caching?&lt;/h2&gt;
+&lt;p&gt;Broswer caching is a technique where the web browser stores copies of website files (HTML, CSS, Javacsript, images, etc .) on the user&amp;rsquo;s device so that the website loads faster on future visits.&lt;/p&gt;
+&lt;h2 id=&#34;use-case&#34;&gt;Use Case&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Faster page loads&lt;/li&gt;
+&lt;li&gt;Reduced bandwith&lt;/li&gt;
+&lt;li&gt;Lower serve load&lt;/li&gt;
+&lt;li&gt;Better user experience&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;how-browser-caching-works&#34;&gt;How browser caching works?&lt;/h2&gt;
+&lt;p&gt;Browser follow rules sent by the server using HTTP headers that tell them:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;What to cache&lt;/li&gt;
+&lt;li&gt;How long to cache&lt;/li&gt;
+&lt;li&gt;Whether to re-check the server&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;cache-control-headers&#34;&gt;Cache control headers&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Cache-Control: max-age  -&amp;gt; Cache for X seconds&lt;/li&gt;
+&lt;li&gt;Cache-Control: no-cache -&amp;gt; Re-check with server before use&lt;/li&gt;
+&lt;li&gt;Cache-Control: no-store -&amp;gt; Don&amp;rsquo;t store anything&lt;/li&gt;
+&lt;li&gt;Expires                 -&amp;gt; Absolute expiration date&lt;/li&gt;
+&lt;li&gt;ETag                    -&amp;gt; Version identifier&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;cahing-flow-simple&#34;&gt;Cahing Flow (Simple)&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Brwoser -&amp;gt; Server: &amp;ldquo;Give me the Page&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Server -&amp;gt; Browser: Page + Cache rules&lt;/li&gt;
+&lt;li&gt;Browser: Saves files locally&lt;/li&gt;
+&lt;li&gt;Next visit:
+&lt;ul&gt;
+&lt;li&gt;If fresh -&amp;gt; load from cache&lt;/li&gt;
+&lt;li&gt;If expired -&amp;gt; Ask server&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;final-memory-trick&#34;&gt;Final memory trick&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Cache = Speed&lt;/li&gt;
+&lt;li&gt;No-cache = Freshness&lt;/li&gt;
+&lt;li&gt;No-store = Security&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;clearing-cache&#34;&gt;Clearing cache&lt;/h2&gt;
+&lt;p&gt;Deletes stored files -&amp;gt; forces browser to download fresh content.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
