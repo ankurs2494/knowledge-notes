@@ -1,3 +1,10 @@
+---
+title: "Cache invalidation"
+date: 2026-01-03
+draft: false
+---
+
+
 # 🧹 Cache Invalidation — Study Notes
 
 ## 📌 What is Cache Invalidation?

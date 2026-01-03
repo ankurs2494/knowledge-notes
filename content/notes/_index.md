@@ -1,5 +1,4 @@
 ---
-title: "Caching Notes"
+title: "Index"
+layout: "list"
 ---
-
-Here are my notes:

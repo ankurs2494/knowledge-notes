@@ -2,3 +2,13 @@ baseURL = 'https://tech-knowledge-notes.netlify.app/'
 languageCode = 'en-us'
 title = 'My Tech Knowledge Notes'
 theme = "PaperMod"
+[params]
+  ShowReadingTime = false
+  ShowShareButtons = false
+  ShowPostNavLinks = false
+  ShowBreadCrumbs = false
+  ShowCodeCopyButtons = true
+  ShowToc = false
+  ShowWordCount = false
+  defaultTheme = "auto"
+  disableSpecial1stPost = true
