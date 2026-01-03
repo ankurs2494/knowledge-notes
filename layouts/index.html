@@ -1,0 +1,9 @@
+<h1>Notes</h1>
+
+<ul>
+  {{ range where .Site.RegularPages "Section" "notes" }}
+    <li>
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    </li>
+  {{ end }}
+</ul>
