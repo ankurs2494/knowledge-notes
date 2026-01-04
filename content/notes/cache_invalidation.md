@@ -5,9 +5,9 @@ draft: false
 ---
 
 
-# 🧹 Cache Invalidation — Study Notes
+# Cache Invalidation — Study Notes
 
-## 📌 What is Cache Invalidation?
+##  What is Cache Invalidation?
 
 Cache invalidation is the process of removing or updating cached data before it naturally expires, when the original data changes — so users don’t see outdated (“stale”) information.
 
@@ -15,7 +15,7 @@ Cache invalidation is the process of removing or updating cached data before it 
 
 ---
 
-## 🤯 Why Is It Hard?
+## Why Is It Hard?
 
 - In distributed systems, the same data can be cached in many places (servers, CDNs, browsers).
 - Making sure every copy is updated at the right time is complex.
@@ -28,14 +28,14 @@ Cache invalidation is the process of removing or updating cached data before it 
 
 | Strategy | How It Works | Example Use Case |
 |----------|-------------|------------------|
-| TTL ⏱️ | Cache expires after a fixed time | Weather updates |
-| Write-Through ✍️ | Update cache + DB together | Banking balances |
-| Write-Around 🚫 | Write only to DB | Logging systems |
-| Pub/Sub 📡 | Events notify caches | Microservices, CDNs |
+| TTL  | Cache expires after a fixed time | Weather updates |
+| Write-Through  | Update cache + DB together | Banking balances |
+| Write-Around  | Write only to DB | Logging systems |
+| Pub/Sub  | Events notify caches | Microservices, CDNs |
 
 ---
 
-## 🔹 1. Time-To-Live (TTL)
+## 1. Time-To-Live (TTL)
 
 Cache auto-expires after a set time.
 
@@ -47,7 +47,7 @@ Product price cached for 5 minutes → after expiry, fetch fresh price.
 
 ---
 
-## 🔹 2. Write-Through
+##  2. Write-Through
 
 Update cache and database together.
 
@@ -56,7 +56,7 @@ Update cache and database together.
 
 ---
 
-## 🔹 3. Write-Around
+##  3. Write-Around
 
 Write to DB only, cache updated later on read.
 
@@ -65,7 +65,7 @@ Write to DB only, cache updated later on read.
 
 ---
 
-## 🔹 4. Publish / Subscribe
+##  4. Publish / Subscribe
 
 Services notify others when data changes.
 
@@ -74,7 +74,7 @@ Services notify others when data changes.
 
 ---
 
-## ⚠️ Challenges
+##  Challenges
 
 | Problem | Explanation |
 |--------|-------------|
@@ -85,7 +85,7 @@ Services notify others when data changes.
 
 ---
 
-## 🧠 Use Cases
+##  Use Cases
 
 | System | Strategy |
 |--------|----------|
@@ -97,7 +97,7 @@ Services notify others when data changes.
 
 ---
 
-## 📝 One-Line Summary
+##  One-Line Summary
 
 Cache invalidation keeps cached data fresh by refreshing or removing stale entries using strategies like TTL, write-through, and event-based updates.
 
