@@ -14,3 +14,8 @@ theme = "PaperMod"
   defaultTheme = "auto"
   ShowPostMeta = true
   disableSpecial1stPost = true
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
