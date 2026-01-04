@@ -5,13 +5,11 @@ draft: false
 ---
 
 
-# Cache Invalidation — Study Notes
-
 ##  What is Cache Invalidation?
 
 Cache invalidation is the process of removing or updating cached data before it naturally expires, when the original data changes — so users don’t see outdated (“stale”) information.
 
-🎯 **Goal:** Always serve fresh and correct data, not stale cached copies.
+**Goal:** Always serve fresh and correct data, not stale cached copies.
 
 ---
 
@@ -24,7 +22,7 @@ Cache invalidation is the process of removing or updating cached data before it 
 
 ---
 
-## 🔁 Common Cache Invalidation Strategies
+##  Common Cache Invalidation Strategies
 
 | Strategy | How It Works | Example Use Case |
 |----------|-------------|------------------|
@@ -42,7 +40,7 @@ Cache auto-expires after a set time.
 **Example:**  
 Product price cached for 5 minutes → after expiry, fetch fresh price.
 
-✔ Simple  
+✅ Simple  
 ❌ May be briefly stale
 
 ---
@@ -51,7 +49,7 @@ Product price cached for 5 minutes → after expiry, fetch fresh price.
 
 Update cache and database together.
 
-✔ Always fresh  
+✅ Always fresh  
 ❌ Slower writes
 
 ---
@@ -60,7 +58,7 @@ Update cache and database together.
 
 Write to DB only, cache updated later on read.
 
-✔ Efficient for heavy writes  
+✅ Efficient for heavy writes  
 ❌ First read is slow
 
 ---
@@ -69,7 +67,7 @@ Write to DB only, cache updated later on read.
 
 Services notify others when data changes.
 
-✔ Best for distributed systems  
+✅ Best for distributed systems  
 ❌ More complex
 
 ---
