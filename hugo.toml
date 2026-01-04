@@ -3,12 +3,14 @@ languageCode = 'en-us'
 title = 'My Tech Knowledge Notes'
 theme = "PaperMod"
 [params]
+  author = "Ankur Singh"
   ShowReadingTime = false
   ShowShareButtons = false
   ShowPostNavLinks = false
-  ShowBreadCrumbs = false
+  ShowBreadCrumbs = true
   ShowCodeCopyButtons = true
   ShowToc = false
   ShowWordCount = false
   defaultTheme = "auto"
+  ShowPostMeta = true
   disableSpecial1stPost = true
