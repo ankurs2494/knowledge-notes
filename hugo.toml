@@ -15,6 +15,11 @@ theme = "PaperMod"
   ShowPostMeta = true
   disableSpecial1stPost = true
   mainSections = ["notes"]
+  showDate = false
+  showAuthor = false
+  showReadingTime = false
+  sidebarHideSections = false  # show section folders
+  sidebarHidePages = false     # show pages in sidebar
 
 [markup]
   [markup.goldmark]

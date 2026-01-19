@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto" data-theme="auto">
 
-<head>
-	<meta name="generator" content="Hugo 0.154.2"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>My Tech Knowledge Notes</title>
-
-<meta name="description" content="Concise, practical notes on caching, distributed systems, backend engineering and SRE — interview-ready explanations and real-world examples.">
+<title>System-Design | My Tech Knowledge Notes</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
 <meta name="author" content="Ankur Singh">
-<link rel="canonical" href="http://localhost:1313/">
+<link rel="canonical" href="http://localhost:1313/tags/system-design/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.343cc480b9ffc8f04ccbe5e968ad674880cab773ec19905e93033065c1e7a804.css" integrity="sha256-NDzEgLn/yPBMy&#43;XpaK1nSIDKt3PsGZBekwMwZcHnqAQ=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
@@ -19,8 +18,8 @@
 <link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/index.xml" title="rss">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/">
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/tags/system-design/index.xml" title="rss">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/tags/system-design/">
 <noscript>
     <style>
         #theme-toggle,
@@ -107,41 +106,13 @@
     </nav>
 </header>
 <main class="main"> 
-<div class="post-content"><h2 id="-welcome">👋 Welcome<a hidden class="anchor" aria-hidden="true" href="#-welcome">#</a></h2>
-<p>This is my personal, opinionated tech knowledge base where I capture concise
-explanations, practical examples, and interview-ready notes for backend and
-infrastructure topics. Topics focus on caching, distributed systems, SRE, and
-backend engineering with an emphasis on real-world tradeoffs.</p>
-<hr>
-<h2 id="-who-is-this-for">🎯 Who is this for?<a hidden class="anchor" aria-hidden="true" href="#-who-is-this-for">#</a></h2>
-<ul>
-<li>Backend engineers</li>
-<li>SREs</li>
-<li>System design interview prep</li>
-<li>Anyone who wants clear tech explanations</li>
-</ul>
-<hr>
-<h2 id="-what-youll-find-here">📚 What you’ll find here<a hidden class="anchor" aria-hidden="true" href="#-what-youll-find-here">#</a></h2>
-<ul>
-<li>Short conceptual notes</li>
-<li>Real-world use cases</li>
-<li>Diagrams &amp; examples</li>
-<li>Interview questions &amp; answers</li>
-</ul>
-<hr>
-<h2 id="-featured-notes">✨ Featured notes<a hidden class="anchor" aria-hidden="true" href="#-featured-notes">#</a></h2>
-<ul>
-<li><a href="/notes/browser-caching/">Browser Caching</a> — how caching works in browsers, cache headers, and common pitfalls.</li>
-<li><a href="/notes/cache_invalidation/">Cache Invalidation</a> — patterns for invalidation and trade-offs in distributed caches.</li>
-<li><a href="/notes/content-delivery-network/">Content Delivery Network</a> — CDN basics, caching layers, and performance tips.</li>
-</ul>
-<hr>
-<p>👉 <strong><a href="/notes/">Go to Notes Index →</a></strong></p>
+<header class="page-header"><div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/tags/">Tags</a></div>
+  <h1>
+    System-Design
+  </h1>
+</header>
 
-
-</div>
-
-<article class="post-entry"> 
+<article class="post-entry tag-entry"> 
   <header class="entry-header">
     <h2 class="entry-hint-parent">Content Delivery Network (CDN): Beginner to SRE-Level Complete Guide
     </h2>
@@ -156,7 +127,7 @@ What is a CDN? (Beginner Level) A CDN is a globally distributed network of serve
   <a class="entry-link" aria-label="post link to Content Delivery Network (CDN): Beginner to SRE-Level Complete Guide" href="http://localhost:1313/notes/content-delivery-network/"></a>
 </article>
 
-<article class="post-entry"> 
+<article class="post-entry tag-entry"> 
   <header class="entry-header">
     <h2 class="entry-hint-parent">Redis vs Memcached: Short Explanation, Use Cases, Pros &amp; Cons
     </h2>
@@ -169,36 +140,6 @@ Cache Flow Diagram Basic Cache-Aside Pattern (Used with Redis &amp; Memcached) C
   </div>
   <footer class="entry-footer"><span title='2026-01-04 00:00:00 +0000 UTC'>January 4, 2026</span>&nbsp;·&nbsp;<span>Ankur Singh</span></footer>
   <a class="entry-link" aria-label="post link to Redis vs Memcached: Short Explanation, Use Cases, Pros & Cons" href="http://localhost:1313/notes/redis-vs-memcached/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Browser Caching
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>What is browser caching? Broswer caching is a technique where the web browser stores copies of website files (HTML, CSS, Javacsript, images, etc .) on the user’s device so that the website loads faster on future visits.
-Use Case Faster page loads Reduced bandwith Lower serve load Better user experience How browser caching works? Browser follow rules sent by the server using HTTP headers that tell them:
-What to cache How long to cache Whether to re-check the server Cache control headers Cache-Control: max-age -&gt; Cache for X seconds Cache-Control: no-cache -&gt; Re-check with server before use Cache-Control: no-store -&gt; Don’t store anything Expires -&gt; Absolute expiration date ETag -&gt; Version identifier Cahing Flow (Simple) Brwoser -&gt; Server: “Give me the Page” Server -&gt; Browser: Page &#43; Cache rules Browser: Saves files locally Next visit: If fresh -&gt; load from cache If expired -&gt; Ask server 💡 Final memory trick Cache = Speed No-cache = Freshness No-store = Security Clearing cache Deletes stored files -&gt; forces browser to download fresh content.
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-01-03 21:32:16 +0100 CET'>January 3, 2026</span>&nbsp;·&nbsp;<span>Ankur Singh</span></footer>
-  <a class="entry-link" aria-label="post link to Browser Caching" href="http://localhost:1313/notes/browser-caching/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Cache invalidation
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>What is Cache Invalidation? Cache invalidation is the process of removing or updating cached data before it naturally expires, when the original data changes — so users don’t see outdated (“stale”) information.
-Goal: Always serve fresh and correct data, not stale cached copies.
-Why Is It Hard? In distributed systems, the same data can be cached in many places (servers, CDNs, browsers). Making sure every copy is updated at the right time is complex. “There are only two hard things in Computer Science: cache invalidation and naming things.”
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-01-03 00:00:00 +0000 UTC'>January 3, 2026</span>&nbsp;·&nbsp;<span>Ankur Singh</span></footer>
-  <a class="entry-link" aria-label="post link to Cache invalidation" href="http://localhost:1313/notes/cache_invalidation/"></a>
 </article>
     </main>
     
