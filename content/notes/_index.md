@@ -1,5 +1,6 @@
 ---
 title: "Index"
+draft: false
 description: "All technical notes and explanations"
 ---
 

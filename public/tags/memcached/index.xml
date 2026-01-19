@@ -10,9 +10,9 @@
     <atom:link href="http://localhost:1313/tags/memcached/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Redis vs Memcached: Short Explanation, Use Cases, Pros &amp; Cons</title>
-      <link>http://localhost:1313/notes/redis-vs-memcached/</link>
+      <link>http://localhost:1313/notes/systemdesign/redis-vs-memcached/</link>
       <pubDate>Sun, 04 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/notes/redis-vs-memcached/</guid>
+      <guid>http://localhost:1313/notes/systemdesign/redis-vs-memcached/</guid>
       <description>A concise comparison of Redis and Memcached with real-life scenarios and 20 must-know interview questions.</description>
     </item>
   </channel>

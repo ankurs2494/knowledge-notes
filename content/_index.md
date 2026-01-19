@@ -2,7 +2,6 @@
 ---
 title: "My Tech Knowledge Notes"
 layout: "home"
-draft: false
 description: "Concise, practical notes on caching, distributed systems, backend engineering and SRE — interview-ready explanations and real-world examples."
 keywords: ["caching","distributed systems","sre","backend","system design"]
 ---
@@ -31,16 +30,4 @@ backend engineering with an emphasis on real-world tradeoffs.
 - Real-world use cases
 - Diagrams & examples
 - Interview questions & answers
-
----
-
-## ✨ Featured notes
-
-- [Browser Caching](/notes/browser-caching/) — how caching works in browsers, cache headers, and common pitfalls.
-- [Cache Invalidation](/notes/cache_invalidation/) — patterns for invalidation and trade-offs in distributed caches.
-- [Content Delivery Network](/notes/content-delivery-network/) — CDN basics, caching layers, and performance tips.
-
----
-
-👉 **[Go to Notes Index →](/notes/)**
 

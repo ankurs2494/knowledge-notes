@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Networking Index on My Tech Knowledge Notes</title>
+    <link>http://localhost:1313/notes/networking/</link>
+    <description>Recent content in Networking Index on My Tech Knowledge Notes</description>
+    <generator>Hugo -- 0.154.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 19 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/notes/networking/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Learn Networking Basics &amp; OSI Model</title>
+      <link>http://localhost:1313/notes/networking/learning_networks/</link>
+      <pubDate>Mon, 19 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/networking/learning_networks/</guid>
+      <description>&lt;h3 id=&#34;1-what-is-a-network&#34;&gt;1️⃣ What Is a Network?&lt;/h3&gt;
+&lt;h4 id=&#34;simple-definition&#34;&gt;Simple definition:&lt;/h4&gt;
+&lt;p&gt;A network is a group of devices that can communicate with each other.&lt;/p&gt;
+&lt;h4 id=&#34;examples-of-devices&#34;&gt;Examples of devices:&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Laptop&lt;/li&gt;
+&lt;li&gt;Phone&lt;/li&gt;
+&lt;li&gt;Server&lt;/li&gt;
+&lt;li&gt;Printer&lt;/li&gt;
+&lt;li&gt;Router&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;If devices can send and receive data, they are on a network.&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;real-life-analogy&#34;&gt;Real-life analogy&lt;/h4&gt;
+&lt;p&gt;Think of a network like a postal system:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Houses = devices&lt;/li&gt;
+&lt;li&gt;Addresses = IP addresses&lt;/li&gt;
+&lt;li&gt;Letters = data&lt;/li&gt;
+&lt;li&gt;Post office = router&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;2-what-is-a-host&#34;&gt;2️⃣ What Is a Host?&lt;/h3&gt;
+&lt;h4 id=&#34;definition&#34;&gt;Definition:&lt;/h4&gt;
+&lt;p&gt;A host is any device that can send or receive data on a network.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

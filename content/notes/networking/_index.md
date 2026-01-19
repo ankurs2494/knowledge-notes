@@ -1,5 +1,6 @@
 ---
-title: "Index"
+title: "Networking Index"
+draft: false
 description: "All technical notes and explanations for networking concepts"
 ---
 
