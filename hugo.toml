@@ -25,3 +25,19 @@ theme = "PaperMod"
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+
+[menu]
+
+# Networking topic
+[[menu.main]]
+name = "Networking"
+url = "/networking/"
+identifier = "networking"
+weight = 10
+
+# System Design topic
+[[menu.main]]
+name = "System design"
+url = "/systemdesign/cdn/"
+parent = "systemdesign"
+weight = 5
