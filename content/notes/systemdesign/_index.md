@@ -1,18 +1,19 @@
 ---
-title: "System design Index"
-description: "All technical notes and explanations for system design"
+title: "System design concept"
+type: page
+description: "A quick review notes and explanations for system design"
 ---
 
-## 📌 Notes Index
+### <font color="Gray">Notes Index</font>
 
-Below is a curated list of all topics covered related to system design.
+<!-- Below is a curated list of all topics covered related to system design. -->
 
-### Caching Fundamentals
+#### 1. Caching Fundamentals
 - [Browser Caching](/notes/systemdesign/browser-caching/)
 - [Cache Invalidation](/notes/systemdesign/cache-invalidation/)
 
-### In-Memory Caching
+#### 2. In-Memory Caching
 - [Redis vs Memcached](/notes/systemdesign/redis-vs-memcached/)
 
-### Distributed Systems
-- [Content Delivery Network (CDN)](/notes/systemdesign/cdn-complete-guide/)
+#### 3. Distributed Systems
+- [Content Delivery Network (CDN)](/notes/systemdesign/cdn/)

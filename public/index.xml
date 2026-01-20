@@ -9,7 +9,7 @@
     <lastBuildDate>Mon, 19 Jan 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Learn Networking Basics &amp; OSI Model</title>
+      <title>Phase 1 : Core networking concepts</title>
       <link>http://localhost:1313/notes/networking/learning_networks/</link>
       <pubDate>Mon, 19 Jan 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/notes/networking/learning_networks/</guid>
@@ -42,9 +42,9 @@
     </item>
     <item>
       <title>Content Delivery Network (CDN): Beginner to SRE-Level Complete Guide</title>
-      <link>http://localhost:1313/notes/systemdesign/content-delivery-network/</link>
+      <link>http://localhost:1313/notes/systemdesign/cdn/</link>
       <pubDate>Sun, 04 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/notes/systemdesign/content-delivery-network/</guid>
+      <guid>http://localhost:1313/notes/systemdesign/cdn/</guid>
       <description>A complete CDN guide from basics to advanced SRE concepts with diagrams, use cases, examples, and 20 interview Q&amp;amp;A.</description>
     </item>
     <item>
@@ -112,9 +112,9 @@
     </item>
     <item>
       <title>Cache invalidation</title>
-      <link>http://localhost:1313/notes/systemdesign/cache_invalidation/</link>
+      <link>http://localhost:1313/notes/systemdesign/cache-invalidation/</link>
       <pubDate>Sat, 03 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/notes/systemdesign/cache_invalidation/</guid>
+      <guid>http://localhost:1313/notes/systemdesign/cache-invalidation/</guid>
       <description>&lt;h2 id=&#34;what-is-cache-invalidation&#34;&gt;What is Cache Invalidation?&lt;/h2&gt;
 &lt;p&gt;Cache invalidation is the process of removing or updating cached data before it naturally expires, when the original data changes — so users don’t see outdated (“stale”) information.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Goal:&lt;/strong&gt; Always serve fresh and correct data, not stale cached copies.&lt;/p&gt;

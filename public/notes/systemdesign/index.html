@@ -5,12 +5,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>System design Index | My Tech Knowledge Notes</title>
+<title>System design concept | My Tech Knowledge Notes</title>
 <meta name="keywords" content="">
-<meta name="description" content="All technical notes and explanations for system design">
+<meta name="description" content="A quick review notes and explanations for system design">
 <meta name="author" content="Ankur Singh">
 <link rel="canonical" href="http://localhost:1313/notes/systemdesign/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.343cc480b9ffc8f04ccbe5e968ad674880cab773ec19905e93033065c1e7a804.css" integrity="sha256-NDzEgLn/yPBMy&#43;XpaK1nSIDKt3PsGZBekwMwZcHnqAQ=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.f3902c6d148eaa99a613dfe501bae72f8d29a9504acfb22b6377f19e7eca3548.css" integrity="sha256-85AsbRSOqpmmE9/lAbrnL40pqVBKz7IrY3fxnn7KNUg=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -115,29 +115,93 @@
         </ul>
     </nav>
 </header>
-<main class="main">
-<h1>System design Index</h1>
-
+<main class="main"> 
+<header class="page-header"><div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/notes/">Notes</a></div>
+  <h1>
+    System design concept
+  </h1>
+  <div class="post-description">
+    A quick review notes and explanations for system design
+  </div>
+</header>
+<div class="post-content"><h3 id="notes-index"><font color="Gray">Notes Index</font><a hidden class="anchor" aria-hidden="true" href="#notes-index">#</a></h3>
+<!-- Below is a curated list of all topics covered related to system design. -->
+<h4 id="1-caching-fundamentals">1. Caching Fundamentals<a hidden class="anchor" aria-hidden="true" href="#1-caching-fundamentals">#</a></h4>
 <ul>
-  
-    <li>
-      <a href="/notes/systemdesign/browser-caching/">Browser Caching</a>
-    </li>
-  
-    <li>
-      <a href="/notes/systemdesign/cache_invalidation/">Cache invalidation</a>
-    </li>
-  
-    <li>
-      <a href="/notes/systemdesign/content-delivery-network/">Content Delivery Network (CDN): Beginner to SRE-Level Complete Guide</a>
-    </li>
-  
-    <li>
-      <a href="/notes/systemdesign/redis-vs-memcached/">Redis vs Memcached: Short Explanation, Use Cases, Pros &amp; Cons</a>
-    </li>
-  
+<li><a href="/notes/systemdesign/browser-caching/">Browser Caching</a></li>
+<li><a href="/notes/systemdesign/cache-invalidation/">Cache Invalidation</a></li>
+</ul>
+<h4 id="2-in-memory-caching">2. In-Memory Caching<a hidden class="anchor" aria-hidden="true" href="#2-in-memory-caching">#</a></h4>
+<ul>
+<li><a href="/notes/systemdesign/redis-vs-memcached/">Redis vs Memcached</a></li>
+</ul>
+<h4 id="3-distributed-systems">3. Distributed Systems<a hidden class="anchor" aria-hidden="true" href="#3-distributed-systems">#</a></h4>
+<ul>
+<li><a href="/notes/systemdesign/cdn/">Content Delivery Network (CDN)</a></li>
 </ul>
 
+
+</div>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Content Delivery Network (CDN): Beginner to SRE-Level Complete Guide
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Introduction A Content Delivery Network (CDN) is a core building block of modern, scalable, and reliable web systems. From simple websites to global-scale platforms like Netflix and Cloudflare, CDNs are essential for performance, availability, and security.
+This guide starts from absolute basics and progresses to advanced SRE-level concepts, including cache strategies, failure handling, and real-world operations.
+What is a CDN? (Beginner Level) A CDN is a globally distributed network of servers that deliver content to users from the nearest geographical location.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-01-04 00:00:00 +0000 UTC'>January 4, 2026</span>&nbsp;·&nbsp;<span>Ankur Singh</span></footer>
+  <a class="entry-link" aria-label="post link to Content Delivery Network (CDN): Beginner to SRE-Level Complete Guide" href="http://localhost:1313/notes/systemdesign/cdn/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Redis vs Memcached: Short Explanation, Use Cases, Pros &amp; Cons
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Introduction Caching is a critical technique used to improve application performance and scalability. Two of the most popular in-memory caching systems are Redis and Memcached. While both are fast, they are designed for different use cases.
+This post gives a short, clear explanation, followed by real-world scenarios, and ends with 20 interview questions and answers worth knowing.
+Cache Flow Diagram Basic Cache-Aside Pattern (Used with Redis &amp; Memcached) Client │ │ Request Data ▼ Application Server │ │ 1. Check Cache ▼ Cache (Redis / Memcached) │ │ Cache Miss ▼ Database │ │ Fetch Data ▼ Cache (Store Result with TTL) │ ▼ Application Server │ ▼ Client (Response) Explanation:
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-01-04 00:00:00 +0000 UTC'>January 4, 2026</span>&nbsp;·&nbsp;<span>Ankur Singh</span></footer>
+  <a class="entry-link" aria-label="post link to Redis vs Memcached: Short Explanation, Use Cases, Pros & Cons" href="http://localhost:1313/notes/systemdesign/redis-vs-memcached/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Browser Caching
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>What is browser caching? Broswer caching is a technique where the web browser stores copies of website files (HTML, CSS, Javacsript, images, etc .) on the user’s device so that the website loads faster on future visits.
+Use Case Faster page loads Reduced bandwith Lower serve load Better user experience How browser caching works? Browser follow rules sent by the server using HTTP headers that tell them:
+What to cache How long to cache Whether to re-check the server Cache control headers Cache-Control: max-age -&gt; Cache for X seconds Cache-Control: no-cache -&gt; Re-check with server before use Cache-Control: no-store -&gt; Don’t store anything Expires -&gt; Absolute expiration date ETag -&gt; Version identifier Cahing Flow (Simple) Brwoser -&gt; Server: “Give me the Page” Server -&gt; Browser: Page &#43; Cache rules Browser: Saves files locally Next visit: If fresh -&gt; load from cache If expired -&gt; Ask server 💡 Final memory trick Cache = Speed No-cache = Freshness No-store = Security Clearing cache Deletes stored files -&gt; forces browser to download fresh content.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-01-03 21:32:16 +0100 CET'>January 3, 2026</span>&nbsp;·&nbsp;<span>Ankur Singh</span></footer>
+  <a class="entry-link" aria-label="post link to Browser Caching" href="http://localhost:1313/notes/systemdesign/browser-caching/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Cache invalidation
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>What is Cache Invalidation? Cache invalidation is the process of removing or updating cached data before it naturally expires, when the original data changes — so users don’t see outdated (“stale”) information.
+Goal: Always serve fresh and correct data, not stale cached copies.
+Why Is It Hard? In distributed systems, the same data can be cached in many places (servers, CDNs, browsers). Making sure every copy is updated at the right time is complex. “There are only two hard things in Computer Science: cache invalidation and naming things.”
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-01-03 00:00:00 +0000 UTC'>January 3, 2026</span>&nbsp;·&nbsp;<span>Ankur Singh</span></footer>
+  <a class="entry-link" aria-label="post link to Cache invalidation" href="http://localhost:1313/notes/systemdesign/cache-invalidation/"></a>
+</article>
     </main>
     
 <footer class="footer">

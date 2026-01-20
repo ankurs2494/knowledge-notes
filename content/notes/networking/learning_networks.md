@@ -1,7 +1,7 @@
 ---
-title: "Learn Networking Basics & OSI Model"
+title: "Phase 1 : Core networking concepts"
 date: 2026-01-19
-draft: false
+type: page
 ---
 
 ### 1️⃣ What Is a Network?

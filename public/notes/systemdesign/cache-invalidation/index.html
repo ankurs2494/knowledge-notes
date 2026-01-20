@@ -5,60 +5,21 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Browser Caching | My Tech Knowledge Notes</title>
+<title>Cache invalidation | My Tech Knowledge Notes</title>
 <meta name="keywords" content="">
-<meta name="description" content="What is browser caching?
-Broswer caching is a technique where the web browser stores copies of website files (HTML, CSS, Javacsript, images, etc .) on the user&rsquo;s device so that the website loads faster on future visits.
+<meta name="description" content="What is Cache Invalidation?
+Cache invalidation is the process of removing or updating cached data before it naturally expires, when the original data changes — so users don’t see outdated (“stale”) information.
+Goal: Always serve fresh and correct data, not stale cached copies.
 
-Use Case
+Why Is It Hard?
 
-Faster page loads
-Reduced bandwith
-Lower serve load
-Better user experience
-
-
-How browser caching works?
-Browser follow rules sent by the server using HTTP headers that tell them:
-
-What to cache
-How long to cache
-Whether to re-check the server
+In distributed systems, the same data can be cached in many places (servers, CDNs, browsers).
+Making sure every copy is updated at the right time is complex.
 
 
-Cache control headers
-
-Cache-Control: max-age  -&gt; Cache for X seconds
-Cache-Control: no-cache -&gt; Re-check with server before use
-Cache-Control: no-store -&gt; Don&rsquo;t store anything
-Expires                 -&gt; Absolute expiration date
-ETag                    -&gt; Version identifier
-
-
-Cahing Flow (Simple)
-
-Brwoser -&gt; Server: &ldquo;Give me the Page&rdquo;
-Server -&gt; Browser: Page &#43; Cache rules
-Browser: Saves files locally
-Next visit:
-
-If fresh -&gt; load from cache
-If expired -&gt; Ask server
-
-
-
-
-💡 Final memory trick
-
-Cache = Speed
-No-cache = Freshness
-No-store = Security
-
-
-Clearing cache
-Deletes stored files -&gt; forces browser to download fresh content.">
+“There are only two hard things in Computer Science: cache invalidation and naming things.”">
 <meta name="author" content="Ankur Singh">
-<link rel="canonical" href="http://localhost:1313/notes/systemdesign/browser-caching/">
+<link rel="canonical" href="http://localhost:1313/notes/systemdesign/cache-invalidation/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.f3902c6d148eaa99a613dfe501bae72f8d29a9504acfb22b6377f19e7eca3548.css" integrity="sha256-85AsbRSOqpmmE9/lAbrnL40pqVBKz7IrY3fxnn7KNUg=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
@@ -67,7 +28,7 @@ Deletes stored files -&gt; forces browser to download fresh content.">
 <link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/notes/systemdesign/browser-caching/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/notes/systemdesign/cache-invalidation/">
 <noscript>
     <style>
         #theme-toggle,
@@ -169,65 +130,150 @@ Deletes stored files -&gt; forces browser to download fresh content.">
   <header class="post-header">
     <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/notes/">Notes</a>&nbsp;»&nbsp;<a href="http://localhost:1313/notes/systemdesign/">System design concept</a></div>
     <h1 class="post-title entry-hint-parent">
-      Browser Caching
+      Cache invalidation
     </h1>
-    <div class="post-meta"><span title='2026-01-03 21:32:16 +0100 CET'>January 3, 2026</span>&nbsp;·&nbsp;<span>Ankur Singh</span>
+    <div class="post-meta"><span title='2026-01-03 00:00:00 +0000 UTC'>January 3, 2026</span>&nbsp;·&nbsp;<span>Ankur Singh</span>
 
 </div>
   </header> 
-  <div class="post-content"><h2 id="what-is-browser-caching">What is browser caching?<a hidden class="anchor" aria-hidden="true" href="#what-is-browser-caching">#</a></h2>
-<p>Broswer caching is a technique where the web browser stores copies of website files (HTML, CSS, Javacsript, images, etc .) on the user&rsquo;s device so that the website loads faster on future visits.</p>
+  <div class="post-content"><h2 id="what-is-cache-invalidation">What is Cache Invalidation?<a hidden class="anchor" aria-hidden="true" href="#what-is-cache-invalidation">#</a></h2>
+<p>Cache invalidation is the process of removing or updating cached data before it naturally expires, when the original data changes — so users don’t see outdated (“stale”) information.</p>
+<p><strong>Goal:</strong> Always serve fresh and correct data, not stale cached copies.</p>
 <hr>
-<h2 id="use-case">Use Case<a hidden class="anchor" aria-hidden="true" href="#use-case">#</a></h2>
+<h2 id="why-is-it-hard">Why Is It Hard?<a hidden class="anchor" aria-hidden="true" href="#why-is-it-hard">#</a></h2>
 <ul>
-<li>Faster page loads</li>
-<li>Reduced bandwith</li>
-<li>Lower serve load</li>
-<li>Better user experience</li>
+<li>In distributed systems, the same data can be cached in many places (servers, CDNs, browsers).</li>
+<li>Making sure every copy is updated at the right time is complex.</li>
 </ul>
+<blockquote>
+<p>“There are only two hard things in Computer Science: cache invalidation and naming things.”</p>
+</blockquote>
 <hr>
-<h2 id="how-browser-caching-works">How browser caching works?<a hidden class="anchor" aria-hidden="true" href="#how-browser-caching-works">#</a></h2>
-<p>Browser follow rules sent by the server using HTTP headers that tell them:</p>
+<h2 id="common-cache-invalidation-strategies">Common Cache Invalidation Strategies<a hidden class="anchor" aria-hidden="true" href="#common-cache-invalidation-strategies">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th>Strategy</th>
+          <th>How It Works</th>
+          <th>Example Use Case</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>TTL</td>
+          <td>Cache expires after a fixed time</td>
+          <td>Weather updates</td>
+      </tr>
+      <tr>
+          <td>Write-Through</td>
+          <td>Update cache + DB together</td>
+          <td>Banking balances</td>
+      </tr>
+      <tr>
+          <td>Write-Around</td>
+          <td>Write only to DB</td>
+          <td>Logging systems</td>
+      </tr>
+      <tr>
+          <td>Pub/Sub</td>
+          <td>Events notify caches</td>
+          <td>Microservices, CDNs</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="1-time-to-live-ttl">1. Time-To-Live (TTL)<a hidden class="anchor" aria-hidden="true" href="#1-time-to-live-ttl">#</a></h2>
+<p>Cache auto-expires after a set time.</p>
+<p><strong>Example:</strong><br>
+Product price cached for 5 minutes → after expiry, fetch fresh price.</p>
+<p>✅ Simple<br>
+❌ May be briefly stale</p>
+<hr>
+<h2 id="2-write-through">2. Write-Through<a hidden class="anchor" aria-hidden="true" href="#2-write-through">#</a></h2>
+<p>Update cache and database together.</p>
+<p>✅ Always fresh<br>
+❌ Slower writes</p>
+<hr>
+<h2 id="3-write-around">3. Write-Around<a hidden class="anchor" aria-hidden="true" href="#3-write-around">#</a></h2>
+<p>Write to DB only, cache updated later on read.</p>
+<p>✅ Efficient for heavy writes<br>
+❌ First read is slow</p>
+<hr>
+<h2 id="4-publish--subscribe">4. Publish / Subscribe<a hidden class="anchor" aria-hidden="true" href="#4-publish--subscribe">#</a></h2>
+<p>Services notify others when data changes.</p>
+<p>✅ Best for distributed systems<br>
+❌ More complex</p>
+<hr>
+<h2 id="challenges">Challenges<a hidden class="anchor" aria-hidden="true" href="#challenges">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th>Problem</th>
+          <th>Explanation</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Multiple caches</td>
+          <td>Same data everywhere</td>
+      </tr>
+      <tr>
+          <td>Network delays</td>
+          <td>Invalidation lag</td>
+      </tr>
+      <tr>
+          <td>Partial failures</td>
+          <td>Missed updates</td>
+      </tr>
+      <tr>
+          <td>CDN complexity</td>
+          <td>Hard to sync globally</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="use-cases">Use Cases<a hidden class="anchor" aria-hidden="true" href="#use-cases">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th>System</th>
+          <th>Strategy</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>News sites</td>
+          <td>TTL</td>
+      </tr>
+      <tr>
+          <td>Banking</td>
+          <td>Write-Through</td>
+      </tr>
+      <tr>
+          <td>Logging</td>
+          <td>Write-Around</td>
+      </tr>
+      <tr>
+          <td>Microservices</td>
+          <td>Pub/Sub</td>
+      </tr>
+      <tr>
+          <td>CDNs</td>
+          <td>TTL + API</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="one-line-summary">One-Line Summary<a hidden class="anchor" aria-hidden="true" href="#one-line-summary">#</a></h2>
+<p>Cache invalidation keeps cached data fresh by refreshing or removing stale entries using strategies like TTL, write-through, and event-based updates.</p>
+<hr>
+<h2 id="-memory-tips">💡 Memory Tips<a hidden class="anchor" aria-hidden="true" href="#-memory-tips">#</a></h2>
 <ul>
-<li>What to cache</li>
-<li>How long to cache</li>
-<li>Whether to re-check the server</li>
+<li>TTL = Time-based</li>
+<li>Write-Through = Always fresh</li>
+<li>Write-Around = Fast writes</li>
+<li>Pub/Sub = Distributed sync</li>
 </ul>
-<hr>
-<h2 id="cache-control-headers">Cache control headers<a hidden class="anchor" aria-hidden="true" href="#cache-control-headers">#</a></h2>
-<ul>
-<li>Cache-Control: max-age  -&gt; Cache for X seconds</li>
-<li>Cache-Control: no-cache -&gt; Re-check with server before use</li>
-<li>Cache-Control: no-store -&gt; Don&rsquo;t store anything</li>
-<li>Expires                 -&gt; Absolute expiration date</li>
-<li>ETag                    -&gt; Version identifier</li>
-</ul>
-<hr>
-<h2 id="cahing-flow-simple">Cahing Flow (Simple)<a hidden class="anchor" aria-hidden="true" href="#cahing-flow-simple">#</a></h2>
-<ol>
-<li>Brwoser -&gt; Server: &ldquo;Give me the Page&rdquo;</li>
-<li>Server -&gt; Browser: Page + Cache rules</li>
-<li>Browser: Saves files locally</li>
-<li>Next visit:
-<ul>
-<li>If fresh -&gt; load from cache</li>
-<li>If expired -&gt; Ask server</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h2 id="-final-memory-trick">💡 Final memory trick<a hidden class="anchor" aria-hidden="true" href="#-final-memory-trick">#</a></h2>
-<ul>
-<li>Cache = Speed</li>
-<li>No-cache = Freshness</li>
-<li>No-store = Security</li>
-</ul>
-<hr>
-<h2 id="clearing-cache">Clearing cache<a hidden class="anchor" aria-hidden="true" href="#clearing-cache">#</a></h2>
-<p>Deletes stored files -&gt; forces browser to download fresh content.</p>
-<hr>
-<h2 id="final-one-line-summary">Final one line summary<a hidden class="anchor" aria-hidden="true" href="#final-one-line-summary">#</a></h2>
-<p>Browser caching improves website performance by storing static files locally in the browser and reusing them on future visits, reducing load time, bandwidth usage, and server load - while HTTP headers control what gets cached and for how long.</p>
 
 
   </div>

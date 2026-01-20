@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>System design Index on My Tech Knowledge Notes</title>
+    <title>System design concept on My Tech Knowledge Notes</title>
     <link>http://localhost:1313/notes/systemdesign/</link>
-    <description>Recent content in System design Index on My Tech Knowledge Notes</description>
+    <description>Recent content in System design concept on My Tech Knowledge Notes</description>
     <generator>Hugo -- 0.154.2</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 04 Jan 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/notes/systemdesign/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Content Delivery Network (CDN): Beginner to SRE-Level Complete Guide</title>
-      <link>http://localhost:1313/notes/systemdesign/content-delivery-network/</link>
+      <link>http://localhost:1313/notes/systemdesign/cdn/</link>
       <pubDate>Sun, 04 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/notes/systemdesign/content-delivery-network/</guid>
+      <guid>http://localhost:1313/notes/systemdesign/cdn/</guid>
       <description>A complete CDN guide from basics to advanced SRE concepts with diagrams, use cases, examples, and 20 interview Q&amp;amp;A.</description>
     </item>
     <item>
@@ -80,9 +80,9 @@
     </item>
     <item>
       <title>Cache invalidation</title>
-      <link>http://localhost:1313/notes/systemdesign/cache_invalidation/</link>
+      <link>http://localhost:1313/notes/systemdesign/cache-invalidation/</link>
       <pubDate>Sat, 03 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/notes/systemdesign/cache_invalidation/</guid>
+      <guid>http://localhost:1313/notes/systemdesign/cache-invalidation/</guid>
       <description>&lt;h2 id=&#34;what-is-cache-invalidation&#34;&gt;What is Cache Invalidation?&lt;/h2&gt;
 &lt;p&gt;Cache invalidation is the process of removing or updating cached data before it naturally expires, when the original data changes — so users don’t see outdated (“stale”) information.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Goal:&lt;/strong&gt; Always serve fresh and correct data, not stale cached copies.&lt;/p&gt;

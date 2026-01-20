@@ -12,7 +12,7 @@ theme = "PaperMod"
   ShowToc = false
   ShowWordCount = false
   defaultTheme = "auto"
-  ShowPostMeta = true
+  ShowPostMeta = false
   disableSpecial1stPost = true
   mainSections = ["notes"]
   showDate = false
@@ -27,13 +27,6 @@ theme = "PaperMod"
       unsafe = true
 
 [menu]
-
-# Networking topic
-[[menu.main]]
-name = "Networking"
-url = "/notes/networking/"
-identifier = "networking"
-weight = 10
 
 # Networking topic
 [[menu.main]]

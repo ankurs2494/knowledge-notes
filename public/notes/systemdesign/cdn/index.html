@@ -5,11 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Redis vs Memcached: Short Explanation, Use Cases, Pros &amp; Cons | My Tech Knowledge Notes</title>
-<meta name="keywords" content="redis, memcached, caching, system-design, interview">
-<meta name="description" content="A concise comparison of Redis and Memcached with real-life scenarios and 20 must-know interview questions.">
+<title>Content Delivery Network (CDN): Beginner to SRE-Level Complete Guide | My Tech Knowledge Notes</title>
+<meta name="keywords" content="cdn, caching, sre, system-design, interview, web-performance">
+<meta name="description" content="A complete CDN guide from basics to advanced SRE concepts with diagrams, use cases, examples, and 20 interview Q&amp;A.">
 <meta name="author" content="Ankur Singh">
-<link rel="canonical" href="http://localhost:1313/notes/systemdesign/redis-vs-memcached/">
+<link rel="canonical" href="http://localhost:1313/notes/systemdesign/cdn/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.f3902c6d148eaa99a613dfe501bae72f8d29a9504acfb22b6377f19e7eca3548.css" integrity="sha256-85AsbRSOqpmmE9/lAbrnL40pqVBKz7IrY3fxnn7KNUg=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
@@ -18,7 +18,7 @@
 <link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/notes/systemdesign/redis-vs-memcached/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/notes/systemdesign/cdn/">
 <noscript>
     <style>
         #theme-toggle,
@@ -120,10 +120,10 @@
   <header class="post-header">
     <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/notes/">Notes</a>&nbsp;»&nbsp;<a href="http://localhost:1313/notes/systemdesign/">System design concept</a></div>
     <h1 class="post-title entry-hint-parent">
-      Redis vs Memcached: Short Explanation, Use Cases, Pros &amp; Cons
+      Content Delivery Network (CDN): Beginner to SRE-Level Complete Guide
     </h1>
     <div class="post-description">
-      A concise comparison of Redis and Memcached with real-life scenarios and 20 must-know interview questions.
+      A complete CDN guide from basics to advanced SRE concepts with diagrams, use cases, examples, and 20 interview Q&amp;A.
     </div>
     <div class="post-meta"><span title='2026-01-04 00:00:00 +0000 UTC'>January 4, 2026</span>&nbsp;·&nbsp;<span>Ankur Singh</span>
 
@@ -131,253 +131,272 @@
   </header> 
   <div class="post-content"><hr>
 <h2 id="introduction">Introduction<a hidden class="anchor" aria-hidden="true" href="#introduction">#</a></h2>
-<p>Caching is a critical technique used to improve application performance and scalability. Two of the most popular in-memory caching systems are <strong>Redis</strong> and <strong>Memcached</strong>. While both are fast, they are designed for different use cases.</p>
-<p>This post gives a <strong>short, clear explanation</strong>, followed by <strong>real-world scenarios</strong>, and ends with <strong>20 interview questions and answers</strong> worth knowing.</p>
+<p>A <strong>Content Delivery Network (CDN)</strong> is a core building block of modern, scalable, and reliable web systems. From simple websites to global-scale platforms like Netflix and Cloudflare, CDNs are essential for <strong>performance, availability, and security</strong>.</p>
+<p>This guide starts from <strong>absolute basics</strong> and progresses to <strong>advanced SRE-level concepts</strong>, including cache strategies, failure handling, and real-world operations.</p>
 <hr>
-<h2 id="cache-flow-diagram">Cache Flow Diagram<a hidden class="anchor" aria-hidden="true" href="#cache-flow-diagram">#</a></h2>
-<h3 id="basic-cache-aside-pattern-used-with-redis--memcached">Basic Cache-Aside Pattern (Used with Redis &amp; Memcached)<a hidden class="anchor" aria-hidden="true" href="#basic-cache-aside-pattern-used-with-redis--memcached">#</a></h3>
-<pre tabindex="0"><code>Client
-  │
-  │ Request Data
-  ▼
-Application Server
-  │
-  │ 1. Check Cache
-  ▼
-Cache (Redis / Memcached)
-  │
-  │ Cache Miss
-  ▼
-Database
-  │
-  │ Fetch Data
-  ▼
-Cache (Store Result with TTL)
-  │
-  ▼
-Application Server
-  │
-  ▼
-Client (Response)
-</code></pre><p><strong>Explanation:</strong></p>
+<h2 id="what-is-a-cdn-beginner-level">What is a CDN? (Beginner Level)<a hidden class="anchor" aria-hidden="true" href="#what-is-a-cdn-beginner-level">#</a></h2>
+<p>A CDN is a <strong>globally distributed network of servers</strong> that deliver content to users from the <strong>nearest geographical location</strong>.</p>
+<p>Instead of every user hitting your origin server, content is served from <strong>edge locations</strong>, reducing latency and load.</p>
+<h3 id="simple-example">Simple Example<a hidden class="anchor" aria-hidden="true" href="#simple-example">#</a></h3>
 <ul>
-<li>Application first checks cache</li>
-<li>On miss, data is fetched from DB</li>
-<li>Result is stored in cache for future requests</li>
+<li>User in India requests <code>image.png</code></li>
+<li>Image is served from Mumbai edge instead of US origin</li>
 </ul>
 <hr>
-<h2 id="what-is-redis">What is Redis?<a hidden class="anchor" aria-hidden="true" href="#what-is-redis">#</a></h2>
-<p>Redis is an <strong>in-memory data store</strong> that can be used as a <strong>cache, database, or message broker</strong>. It supports multiple data structures and optional persistence.</p>
-<h3 id="common-use-cases">Common Use Cases<a hidden class="anchor" aria-hidden="true" href="#common-use-cases">#</a></h3>
+<h2 id="basic-cdn-flow-diagram">Basic CDN Flow Diagram<a hidden class="anchor" aria-hidden="true" href="#basic-cdn-flow-diagram">#</a></h2>
+<pre tabindex="0"><code>User
+ │ Request Content
+ ▼
+Nearest CDN Edge
+ │ Cache Hit?
+ ├── Yes → Serve Content
+ └── No
+        ▼
+     Origin Server
+        │ Fetch Content
+        ▼
+     CDN Edge (Cache)
+        │
+        ▼
+       User
+</code></pre><hr>
+<h2 id="what-does-a-cdn-cache">What Does a CDN Cache?<a hidden class="anchor" aria-hidden="true" href="#what-does-a-cdn-cache">#</a></h2>
 <ul>
-<li>Session storage</li>
-<li>API response caching</li>
-<li>Rate limiting</li>
-<li>Real-time analytics</li>
-<li>Leaderboards</li>
-<li>Pub/Sub messaging</li>
-</ul>
-<h3 id="example">Example<a hidden class="anchor" aria-hidden="true" href="#example">#</a></h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>SET user:123 <span style="color:#e6db74">&#34;{name: &#39;Alice&#39;}&#34;</span>
-</span></span><span style="display:flex;"><span>EXPIRE user:123 <span style="color:#ae81ff">3600</span>
-</span></span></code></pre></div><h3 id="pros">Pros<a hidden class="anchor" aria-hidden="true" href="#pros">#</a></h3>
-<ul>
-<li>Supports advanced data structures</li>
-<li>Optional persistence (RDB, AOF)</li>
-<li>Replication and high availability</li>
-<li>Atomic operations</li>
-<li>Pub/Sub support</li>
-</ul>
-<h3 id="cons">Cons<a hidden class="anchor" aria-hidden="true" href="#cons">#</a></h3>
-<ul>
-<li>Higher memory usage</li>
-<li>Slightly complex to manage</li>
-<li>Overkill for very simple caching</li>
-</ul>
-<h3 id="real-life-scenarios">Real-Life Scenarios<a hidden class="anchor" aria-hidden="true" href="#real-life-scenarios">#</a></h3>
-<ul>
-<li><strong>E-commerce</strong>: inventory counters</li>
-<li><strong>Social media</strong>: likes, followers, timelines</li>
-<li><strong>Gaming</strong>: real-time leaderboards</li>
-<li><strong>Authentication systems</strong>: sessions and tokens</li>
+<li>Static assets (JS, CSS, images, videos)</li>
+<li>HTML pages</li>
+<li>API responses (with rules)</li>
+<li>Media streams</li>
 </ul>
 <hr>
-<h2 id="what-is-memcached">What is Memcached?<a hidden class="anchor" aria-hidden="true" href="#what-is-memcached">#</a></h2>
-<p>Memcached is a <strong>lightweight, in-memory key-value store</strong> designed purely for caching.</p>
-<h3 id="common-use-cases-1">Common Use Cases<a hidden class="anchor" aria-hidden="true" href="#common-use-cases-1">#</a></h3>
+<h2 id="key-benefits-of-cdn">Key Benefits of CDN<a hidden class="anchor" aria-hidden="true" href="#key-benefits-of-cdn">#</a></h2>
+<h3 id="performance">Performance<a hidden class="anchor" aria-hidden="true" href="#performance">#</a></h3>
 <ul>
-<li>Page caching</li>
-<li>Database query caching</li>
-<li>Object caching</li>
+<li>Reduced latency</li>
+<li>Faster page load times</li>
 </ul>
-<h3 id="example-1">Example<a hidden class="anchor" aria-hidden="true" href="#example-1">#</a></h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>set user_123 <span style="color:#ae81ff">3600</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">15</span>
-</span></span><span style="display:flex;"><span>Alice
-</span></span></code></pre></div><h3 id="pros-1">Pros<a hidden class="anchor" aria-hidden="true" href="#pros-1">#</a></h3>
+<h3 id="scalability">Scalability<a hidden class="anchor" aria-hidden="true" href="#scalability">#</a></h3>
 <ul>
-<li>Extremely fast</li>
-<li>Simple to use</li>
-<li>Low memory overhead</li>
-<li>Easy horizontal scaling</li>
+<li>Handles traffic spikes</li>
+<li>Offloads origin servers</li>
 </ul>
-<h3 id="cons-1">Cons<a hidden class="anchor" aria-hidden="true" href="#cons-1">#</a></h3>
+<h3 id="reliability">Reliability<a hidden class="anchor" aria-hidden="true" href="#reliability">#</a></h3>
 <ul>
-<li>No persistence</li>
-<li>No replication</li>
-<li>Only string key-value storage</li>
-<li>Data lost on restart</li>
+<li>Origin protection</li>
+<li>Failover and redundancy</li>
 </ul>
-<h3 id="real-life-scenarios-1">Real-Life Scenarios<a hidden class="anchor" aria-hidden="true" href="#real-life-scenarios-1">#</a></h3>
+<h3 id="security">Security<a hidden class="anchor" aria-hidden="true" href="#security">#</a></h3>
 <ul>
-<li><strong>News websites</strong>: homepage caching</li>
-<li><strong>Blogs</strong>: rendered HTML caching</li>
-<li><strong>Read-heavy applications</strong>: database load reduction</li>
+<li>DDoS protection</li>
+<li>WAF integration</li>
+<li>TLS termination</li>
 </ul>
 <hr>
-<h2 id="redis-vs-memcached-comparison">Redis vs Memcached Comparison<a hidden class="anchor" aria-hidden="true" href="#redis-vs-memcached-comparison">#</a></h2>
+<h2 id="cdn-use-cases">CDN Use Cases<a hidden class="anchor" aria-hidden="true" href="#cdn-use-cases">#</a></h2>
+<h3 id="beginner--common">Beginner / Common<a hidden class="anchor" aria-hidden="true" href="#beginner--common">#</a></h3>
+<ul>
+<li>Website static asset delivery</li>
+<li>Image &amp; video hosting</li>
+</ul>
+<h3 id="intermediate">Intermediate<a hidden class="anchor" aria-hidden="true" href="#intermediate">#</a></h3>
+<ul>
+<li>API acceleration</li>
+<li>Mobile app backend caching</li>
+</ul>
+<h3 id="advanced--sre-level">Advanced / SRE-Level<a hidden class="anchor" aria-hidden="true" href="#advanced--sre-level">#</a></h3>
+<ul>
+<li>Global SaaS platforms</li>
+<li>Live streaming</li>
+<li>Zero-downtime deployments</li>
+<li>Edge computing</li>
+</ul>
+<hr>
+<h2 id="real-life-cdn-examples">Real-Life CDN Examples<a hidden class="anchor" aria-hidden="true" href="#real-life-cdn-examples">#</a></h2>
+<ul>
+<li><strong>Netflix</strong>: Video streaming from edge locations</li>
+<li><strong>Amazon CloudFront</strong>: E-commerce asset delivery</li>
+<li><strong>Cloudflare</strong>: CDN + security platform</li>
+<li><strong>YouTube</strong>: Adaptive video delivery</li>
+</ul>
+<hr>
+<h2 id="cdn-caching-strategies-intermediate">CDN Caching Strategies (Intermediate)<a hidden class="anchor" aria-hidden="true" href="#cdn-caching-strategies-intermediate">#</a></h2>
+<ul>
+<li>Cache-Control headers</li>
+<li>TTL-based caching</li>
+<li>Cache busting (versioned URLs)</li>
+<li>Purge / Invalidation</li>
+</ul>
+<h3 id="example-header">Example Header<a hidden class="anchor" aria-hidden="true" href="#example-header">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">Cache-Control: public, max-age=3600
+</span></span></span></code></pre></div><hr>
+<h2 id="advanced-cdn-concepts-sre-level">Advanced CDN Concepts (SRE Level)<a hidden class="anchor" aria-hidden="true" href="#advanced-cdn-concepts-sre-level">#</a></h2>
+<h3 id="edge-computing">Edge Computing<a hidden class="anchor" aria-hidden="true" href="#edge-computing">#</a></h3>
+<ul>
+<li>Run logic at CDN edge (Cloudflare Workers, Fastly Compute)</li>
+</ul>
+<h3 id="origin-shield">Origin Shield<a hidden class="anchor" aria-hidden="true" href="#origin-shield">#</a></h3>
+<ul>
+<li>Single mid-tier cache to protect origin</li>
+</ul>
+<h3 id="cache-hierarchy">Cache Hierarchy<a hidden class="anchor" aria-hidden="true" href="#cache-hierarchy">#</a></h3>
+<ul>
+<li>Edge → Regional → Origin</li>
+</ul>
+<h3 id="failover--multi-cdn">Failover &amp; Multi-CDN<a hidden class="anchor" aria-hidden="true" href="#failover--multi-cdn">#</a></h3>
+<ul>
+<li>Traffic switching on failure</li>
+<li>Vendor lock-in avoidance</li>
+</ul>
+<hr>
+<h2 id="advanced-cdn-architecture-diagram">Advanced CDN Architecture Diagram<a hidden class="anchor" aria-hidden="true" href="#advanced-cdn-architecture-diagram">#</a></h2>
+<pre tabindex="0"><code>Users (Global)
+      │
+      ▼
+ CDN Edge Locations
+      │
+      ▼
+ Regional Cache / Origin Shield
+      │
+      ▼
+ Origin Infrastructure
+ (Load Balancer + Services + DB)
+</code></pre><hr>
+<h2 id="cdn-vs-traditional-cache-redismemcached">CDN vs Traditional Cache (Redis/Memcached)<a hidden class="anchor" aria-hidden="true" href="#cdn-vs-traditional-cache-redismemcached">#</a></h2>
 <table>
   <thead>
       <tr>
-          <th>Feature</th>
-          <th>Redis</th>
-          <th>Memcached</th>
+          <th>Aspect</th>
+          <th>CDN</th>
+          <th>Redis/Memcached</th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td>Data Types</td>
-          <td>Multiple</td>
-          <td>Strings only</td>
+          <td>Location</td>
+          <td>Edge (Global)</td>
+          <td>Application Layer</td>
       </tr>
       <tr>
-          <td>Persistence</td>
-          <td>Yes</td>
-          <td>No</td>
+          <td>Data Type</td>
+          <td>HTTP Content</td>
+          <td>Application Data</td>
       </tr>
       <tr>
-          <td>Replication</td>
-          <td>Yes</td>
-          <td>No</td>
+          <td>Latency</td>
+          <td>Internet Edge</td>
+          <td>In-Process / VPC</td>
       </tr>
       <tr>
-          <td>Pub/Sub</td>
-          <td>Yes</td>
-          <td>No</td>
-      </tr>
-      <tr>
-          <td>Complexity</td>
-          <td>Medium</td>
-          <td>Simple</td>
-      </tr>
-      <tr>
-          <td>Performance (simple cache)</td>
-          <td>Fast</td>
-          <td>Very fast</td>
+          <td>Security</td>
+          <td>Built-in</td>
+          <td>App-managed</td>
       </tr>
   </tbody>
 </table>
 <hr>
-<h2 id="when-to-choose-which">When to Choose Which?<a hidden class="anchor" aria-hidden="true" href="#when-to-choose-which">#</a></h2>
+<h2 id="common-cdn-pitfalls">Common CDN Pitfalls<a hidden class="anchor" aria-hidden="true" href="#common-cdn-pitfalls">#</a></h2>
 <ul>
-<li>Choose <strong>Redis</strong> if you need durability, complex data types, or real-time features.</li>
-<li>Choose <strong>Memcached</strong> if you want extremely fast, temporary caching with minimal setup.</li>
+<li>Incorrect cache headers</li>
+<li>Serving stale content</li>
+<li>Cache poisoning</li>
+<li>Over-aggressive caching</li>
 </ul>
 <hr>
 <h2 id="interview-questions--answers-20-must-know">Interview Questions &amp; Answers (20 Must-Know)<a hidden class="anchor" aria-hidden="true" href="#interview-questions--answers-20-must-know">#</a></h2>
 <details>
-<summary><strong>1. What is caching?</strong></summary>
-Caching is storing frequently accessed data in memory to reduce latency and backend load.
+<summary><strong>1. What is a CDN?</strong></summary>
+A CDN is a distributed network that serves content from locations closest to users.
 </details>
 <details>
-<summary><strong>2. Difference between Redis and Memcached?</strong></summary>
-Redis supports persistence and data structures; Memcached is a simple key-value cache.
+<summary><strong>2. Why do we use CDNs?</strong></summary>
+To reduce latency, improve availability, and protect origin servers.
 </details>
 <details>
-<summary><strong>3. Is Redis only a cache?</strong></summary>
-No. Redis can act as a cache, database, and message broker.
+<summary><strong>3. What is an edge location?</strong></summary>
+A CDN server that delivers content close to users.
 </details>
 <details>
-<summary><strong>4. Why is Redis slower than Memcached in some cases?</strong></summary>
-Redis has more features and metadata overhead.
+<summary><strong>4. What is an origin server?</strong></summary>
+The main backend server where original content resides.
 </details>
 <details>
-<summary><strong>5. Does Redis support persistence?</strong></summary>
-Yes, via RDB snapshots and AOF logs.
+<summary><strong>5. What is cache hit and miss?</strong></summary>
+Hit means content served from cache; miss means fetched from origin.
 </details>
 <details>
-<summary><strong>6. What happens to Memcached data after restart?</strong></summary>
-All data is lost.
+<summary><strong>6. What headers control CDN caching?</strong></summary>
+Cache-Control, Expires, ETag, Last-Modified.
 </details>
 <details>
-<summary><strong>7. What data structures does Redis support?</strong></summary>
-Strings, hashes, lists, sets, sorted sets, streams, and more.
+<summary><strong>7. What is cache invalidation?</strong></summary>
+Removing cached content before TTL expires.
 </details>
 <details>
-<summary><strong>8. What is Redis Pub/Sub?</strong></summary>
-A messaging pattern where publishers send messages to subscribers.
+<summary><strong>8. CDN vs Load Balancer?</strong></summary>
+CDN serves cached content; load balancer distributes traffic to backends.
 </details>
 <details>
-<summary><strong>9. Can Memcached replicate data?</strong></summary>
-No, replication is not supported.
+<summary><strong>9. Can CDNs cache dynamic content?</strong></summary>
+Yes, with rules, headers, and edge logic.
 </details>
 <details>
-<summary><strong>10. What is cache eviction?</strong></summary>
-Removing old data when cache memory is full.
+<summary><strong>10. What is edge computing?</strong></summary>
+Executing code closer to users at CDN edge locations.
 </details>
 <details>
-<summary><strong>11. What eviction policies does Redis support?</strong></summary>
-LRU, LFU, TTL-based, and no-eviction.
+<summary><strong>11. What is Origin Shield?</strong></summary>
+A centralized cache layer protecting origin servers.
 </details>
 <details>
-<summary><strong>12. Which is better for session storage?</strong></summary>
-Redis, because it supports persistence and TTLs.
+<summary><strong>12. How do CDNs help with DDoS?</strong></summary>
+By absorbing and filtering traffic at the edge.
 </details>
 <details>
-<summary><strong>13. Can Redis be used for rate limiting?</strong></summary>
-Yes, using atomic counters and expiration.
+<summary><strong>13. What is multi-CDN?</strong></summary>
+Using multiple CDN providers for resilience and performance.
 </details>
 <details>
-<summary><strong>14. Is Memcached thread-safe?</strong></summary>
-Yes, it supports multithreaded operations.
+<summary><strong>14. What is cache poisoning?</strong></summary>
+Injecting malicious content into CDN cache.
 </details>
 <details>
-<summary><strong>15. What is TTL?</strong></summary>
-Time-To-Live defines how long cached data stays valid.
+<summary><strong>15. What is stale-while-revalidate?</strong></summary>
+Serving stale content while fetching fresh data in background.
 </details>
 <details>
-<summary><strong>16. Can Redis scale horizontally?</strong></summary>
-Yes, using Redis Cluster.
+<summary><strong>16. How does CDN failover work?</strong></summary>
+Traffic is rerouted to healthy edges or another CDN.
 </details>
 <details>
-<summary><strong>17. Why use Memcached over Redis?</strong></summary>
-For very simple, high-speed, ephemeral caching.
+<summary><strong>17. What metrics do SREs monitor for CDN?</strong></summary>
+Cache hit ratio, latency, error rate, origin load.
 </details>
 <details>
-<summary><strong>18. Is Redis single-threaded?</strong></summary>
-Mostly yes, but it uses I/O multiplexing and background threads.
+<summary><strong>18. CDN vs Reverse Proxy?</strong></summary>
+CDN is globally distributed; reverse proxy is usually local.
 </details>
 <details>
-<summary><strong>19. What happens if cache fails?</strong></summary>
-The system falls back to the database (cache miss).
+<summary><strong>19. What happens if CDN is down?</strong></summary>
+Traffic can fall back to origin or another CDN.
 </details>
 <details>
-<summary><strong>20. Redis vs Memcached — one-line summary?</strong></summary>
-Redis is feature-rich; Memcached is fast and minimal.
+<summary><strong>20. One-line CDN summary?</strong></summary>
+CDNs bring content closer to users for speed, scale, and security.
 </details>
 <hr>
 <h2 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h2>
-<p>Redis and Memcached both solve caching problems but target different needs. Understanding their strengths helps you design scalable, high-performance systems — and ace system design interviews.</p>
+<p>For SREs, CDNs are not just about speed—they are critical infrastructure for <strong>reliability, scalability, and security</strong>. Mastering CDN internals is essential for operating global systems.</p>
 
 
   </div>
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:1313/tags/redis/">Redis</a></li>
-      <li><a href="http://localhost:1313/tags/memcached/">Memcached</a></li>
+      <li><a href="http://localhost:1313/tags/cdn/">Cdn</a></li>
       <li><a href="http://localhost:1313/tags/caching/">Caching</a></li>
+      <li><a href="http://localhost:1313/tags/sre/">Sre</a></li>
       <li><a href="http://localhost:1313/tags/system-design/">System-Design</a></li>
       <li><a href="http://localhost:1313/tags/interview/">Interview</a></li>
+      <li><a href="http://localhost:1313/tags/web-performance/">Web-Performance</a></li>
     </ul>
   </footer>
 </article>

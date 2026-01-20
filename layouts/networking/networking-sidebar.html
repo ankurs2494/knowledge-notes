@@ -1,0 +1,16 @@
+<aside class="sidebar sidebar-left">
+  <h3>Networking</h3>
+
+  <ul class="sidebar-menu">
+    {{ range .Site.GetPage "section" "networking" .Pages }}
+    {{ end }}
+    
+    {{ with .Site.GetPage "section" "networking" }}
+      {{ range .Pages.ByWeight }}
+        <li class="{{ if eq $.RelPermalink .RelPermalink }}active{{ end }}">
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </li>
+      {{ end }}
+    {{ end }}
+  </ul>
+</aside>
