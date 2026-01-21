@@ -5,9 +5,13 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>My Tech Knowledge Notes</title>
+<title>Phase 4 – DNS (Domain Name System) | My Tech Knowledge Notes</title>
 <meta name="keywords" content="">
-<meta name="description" content=" - My Tech Knowledge Notes">
+<meta name="description" content="
+DNS is one of the most critical systems on the internet.
+If DNS fails, everything appears broken — even when the network is perfectly fine.
+In this phase, we focus on DNS — the quiet system that makes the internet usable for humans.
+You’ll learn how domain names are translated into IP addresses, what actually happens when you type a website into your browser, and how DNS queries move across multiple servers behind the scenes.">
 <meta name="author" content="Ankur Singh">
 <link rel="canonical" href="http://localhost:1313/notes/networking/phase4-dns-name-resolution/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.f3902c6d148eaa99a613dfe501bae72f8d29a9504acfb22b6377f19e7eca3548.css" integrity="sha256-85AsbRSOqpmmE9/lAbrnL40pqVBKz7IrY3fxnn7KNUg=" rel="preload stylesheet" as="style">
@@ -120,12 +124,220 @@
   <header class="post-header">
     <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/notes/">Notes</a>&nbsp;»&nbsp;<a href="http://localhost:1313/notes/networking/">Networking Index</a></div>
     <h1 class="post-title entry-hint-parent">
-      
+      Phase 4 – DNS (Domain Name System)
     </h1>
-    <div class="post-meta"><span>Ankur Singh</span>
+    <div class="post-meta"><span title='2026-01-21 00:00:00 +0000 UTC'>January 21, 2026</span>&nbsp;·&nbsp;<span>Ankur Singh</span>
 
 </div>
   </header> 
+  <div class="post-content"><!-- ### What This Phase Covers -->
+<p>DNS is one of the most critical systems on the internet.</p>
+<p>If DNS fails, <strong>everything appears broken</strong> — even when the network is perfectly fine.</p>
+<p>In this phase, we focus on DNS — the quiet system that makes the internet usable for humans.</p>
+<p>You’ll learn how domain names are translated into IP addresses, what actually happens when you type a website into your browser, and how DNS queries move across multiple servers behind the scenes.</p>
+<p>By the end of this phase, DNS should feel practical and intuitive, not mysterious. You’ll be able to understand DNS behavior in real situations and reason through common DNS-related problems with confidence.</p>
+<hr>
+<h3 id="1-why-dns-exists"><font color="BlueViolet">1️⃣ Why DNS Exists</font><a hidden class="anchor" aria-hidden="true" href="#1-why-dns-exists">#</a></h3>
+<h4 id="the-problem">The Problem<a hidden class="anchor" aria-hidden="true" href="#the-problem">#</a></h4>
+<ul>
+<li>Humans prefer names: <code>google.com</code></li>
+<li>Computers require numbers: <code>142.250.72.14</code></li>
+</ul>
+<h4 id="the-solution">The Solution<a hidden class="anchor" aria-hidden="true" href="#the-solution">#</a></h4>
+<p><strong>DNS translates names → IP addresses</strong></p>
+<p>Without DNS:</p>
+<ul>
+<li>You would need to memorize IP addresses</li>
+<li>The internet would be effectively unusable</li>
+</ul>
+<hr>
+<h3 id="2-what-is-dns"><font color="BlueViolet">2️⃣ What Is DNS?</font><a hidden class="anchor" aria-hidden="true" href="#2-what-is-dns">#</a></h3>
+<p><strong>DNS (Domain Name System)</strong> is a <strong>distributed phone book</strong> for the internet.</p>
+<p>How it works:</p>
+<ul>
+<li>Name in → IP out</li>
+<li>Request → Response (just like all networking)</li>
+</ul>
+<hr>
+<h3 id="3-dns-is-not-one-server"><font color="BlueViolet">3️⃣ DNS Is NOT One Server</font><a hidden class="anchor" aria-hidden="true" href="#3-dns-is-not-one-server">#</a></h3>
+<p>DNS is a <strong>hierarchical system</strong>, not a single machine.</p>
+<h4 id="dns-hierarchy-levels">DNS Hierarchy Levels<a hidden class="anchor" aria-hidden="true" href="#dns-hierarchy-levels">#</a></h4>
+<ul>
+<li>Root servers (<code>.</code>)</li>
+<li>TLD servers (<code>.com</code>, <code>.org</code>, <code>.net</code>)</li>
+<li>Authoritative servers (domain owners)</li>
+</ul>
+<p>There is <strong>no single point of failure</strong> in DNS.</p>
+<h4 id="dns-hierarchy-ascii-diagram">DNS Hierarchy (ASCII Diagram)<a hidden class="anchor" aria-hidden="true" href="#dns-hierarchy-ascii-diagram">#</a></h4>
+<pre tabindex="0"><code>[ Root (.) ]
+     |
+     v
+[ TLD (.com) ]
+     |
+     v
+[ Authoritative (example.com) ]
+</code></pre><hr>
+<h3 id="4-dns-resolution-flow-very-important"><font color="BlueViolet">4️⃣ DNS Resolution Flow</font> <font color="red">(Very Important)</font><a hidden class="anchor" aria-hidden="true" href="#4-dns-resolution-flow-very-important">#</a></h3>
+<p>When you type:</p>
+<pre tabindex="0"><code>www.example.com
+</code></pre><h4 id="step-by-step-resolution">Step-by-Step Resolution<a hidden class="anchor" aria-hidden="true" href="#step-by-step-resolution">#</a></h4>
+<ol>
+<li>
+<p>Browser checks its local cache</p>
+</li>
+<li>
+<p>Operating system checks DNS cache</p>
+</li>
+<li>
+<p>Request goes to a <strong>recursive resolver</strong> (ISP / Cloud DNS)</p>
+</li>
+<li>
+<p>Resolver performs iterative queries:</p>
+<ul>
+<li>Root server → &ldquo;Who handles .com?&rdquo;</li>
+<li>TLD server → &ldquo;Who handles example.com?&rdquo;</li>
+<li>Authoritative server → &ldquo;What is the IP?&rdquo;</li>
+</ul>
+</li>
+<li>
+<p>IP address is returned to the browser</p>
+</li>
+<li>
+<p>Browser connects to the server using the IP</p>
+</li>
+</ol>
+<h4 id="dns-resolution-flow-ascii-diagram">DNS Resolution Flow (ASCII Diagram)<a hidden class="anchor" aria-hidden="true" href="#dns-resolution-flow-ascii-diagram">#</a></h4>
+<pre tabindex="0"><code>Browser
+   |
+   v
+Local Cache
+   |
+   v
+Recursive Resolver
+   |
+   v
+Root (.) → TLD (.com) → Authoritative (example.com)
+   |
+   v
+IP Address Returned
+</code></pre><p>💡 All of this happens in <strong>milliseconds</strong>.</p>
+<hr>
+<h3 id="5-dns-records-you-must-know-these"><font color="BlueViolet">5️⃣ DNS Records (You MUST Know These)</font><a hidden class="anchor" aria-hidden="true" href="#5-dns-records-you-must-know-these">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Record Type</th>
+          <th>Purpose</th>
+          <th>Example</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>A</td>
+          <td>Name → IPv4</td>
+          <td>example.com → 93.184.216.34</td>
+      </tr>
+      <tr>
+          <td>AAAA</td>
+          <td>Name → IPv6</td>
+          <td>example.com → IPv6 address</td>
+      </tr>
+      <tr>
+          <td>CNAME</td>
+          <td>Alias to another name</td>
+          <td><a href="http://www.example.com">www.example.com</a> → example.com</td>
+      </tr>
+      <tr>
+          <td>MX</td>
+          <td>Mail servers</td>
+          <td>mail.example.com</td>
+      </tr>
+      <tr>
+          <td>TXT</td>
+          <td>Text data</td>
+          <td>SPF, DKIM, verification</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="6-dns-uses-udp-mostly"><font color="BlueViolet">6️⃣ DNS Uses UDP (Mostly)</font><a hidden class="anchor" aria-hidden="true" href="#6-dns-uses-udp-mostly">#</a></h3>
+<h4 id="default-behavior">Default behavior:<a hidden class="anchor" aria-hidden="true" href="#default-behavior">#</a></h4>
+<ul>
+<li>Protocol: UDP</li>
+<li>Port: 53</li>
+<li>Fast and lightweight</li>
+</ul>
+<h4 id="dns-uses-tcp-when">DNS uses <font color="blue"><strong>TCP</strong></font> when:<a hidden class="anchor" aria-hidden="true" href="#dns-uses-tcp-when">#</a></h4>
+<ul>
+<li>Response size is large</li>
+<li>Zone transfers occur</li>
+<li>DNSSEC is enabled</li>
+</ul>
+<hr>
+<h3 id="7-ttl-time-to-live"><font color="BlueViolet">7️⃣ TTL (Time To Live)</font><a hidden class="anchor" aria-hidden="true" href="#7-ttl-time-to-live">#</a></h3>
+<p><strong>TTL</strong> defines how long a DNS response can be cached.</p>
+<h4 id="example">Example<a hidden class="anchor" aria-hidden="true" href="#example">#</a></h4>
+<pre tabindex="0"><code>TTL = 300 seconds
+</code></pre><h4 id="means">Means:<a hidden class="anchor" aria-hidden="true" href="#means">#</a></h4>
+<ul>
+<li>DNS changes are not seen immediately</li>
+<li>DNS problems may persist until cache expires</li>
+</ul>
+<hr>
+<h3 id="8-internal-vs-public-dns"><font color="BlueViolet">8️⃣ Internal vs Public DNS</font><a hidden class="anchor" aria-hidden="true" href="#8-internal-vs-public-dns">#</a></h3>
+<h4 id="public-dns">Public DNS<a hidden class="anchor" aria-hidden="true" href="#public-dns">#</a></h4>
+<ul>
+<li>Used for public websites</li>
+<li>Example: <code>google.com</code></li>
+<li>Resolved via internet DNS infrastructure</li>
+</ul>
+<h4 id="internal-dns">Internal DNS<a hidden class="anchor" aria-hidden="true" href="#internal-dns">#</a></h4>
+<ul>
+<li>Used inside companies or cloud environments</li>
+<li>Example: <code>service.internal</code></li>
+<li>Not accessible from the public internet</li>
+</ul>
+<hr>
+<h3 id="9-common-dns-problems-real-world"><font color="BlueViolet">9️⃣ Common DNS Problems (Real World)</font><a hidden class="anchor" aria-hidden="true" href="#9-common-dns-problems-real-world">#</a></h3>
+<ul>
+<li>Wrong DNS record</li>
+<li>Cached stale records (TTL issues)</li>
+<li>DNS server unreachable</li>
+<li>Misconfigured CNAME chains</li>
+</ul>
+<blockquote>
+<p>Most &ldquo;network outages&rdquo; are actually <strong>DNS issues</strong>.</p>
+</blockquote>
+<hr>
+<h3 id="-dns-is-layer-7-but-affects-everything"><font color="BlueViolet">🔟 DNS Is Layer 7</font> (But Affects Everything)<a hidden class="anchor" aria-hidden="true" href="#-dns-is-layer-7-but-affects-everything">#</a></h3>
+<h4 id="dns-itself-is">DNS itself is:<a hidden class="anchor" aria-hidden="true" href="#dns-itself-is">#</a></h4>
+<ul>
+<li>Application Layer (Layer 7)</li>
+</ul>
+<h4 id="but-when-dns-fails-it-looks-like">But when DNS fails, it looks like:<a hidden class="anchor" aria-hidden="true" href="#but-when-dns-fails-it-looks-like">#</a></h4>
+<ul>
+<li>Network issue</li>
+<li>Application issue</li>
+<li>Timeout or server down</li>
+</ul>
+<p>This is what makes DNS <strong>tricky to debug</strong>.</p>
+<hr>
+<h3 id="mental-model-lock-this-in"><font color="teal">Mental Model (Lock This In)</font><a hidden class="anchor" aria-hidden="true" href="#mental-model-lock-this-in">#</a></h3>
+<pre tabindex="0"><code>Name → DNS → IP → TCP → Application
+</code></pre><p><strong>No DNS = No Internet</strong></p>
+<hr>
+<h3 id="check-your-understanding"><font color="teal">Check Your Understanding</font><a hidden class="anchor" aria-hidden="true" href="#check-your-understanding">#</a></h3>
+<p>You should confidently answer:</p>
+<ul>
+<li>Why DNS exists</li>
+<li>Difference between A and CNAME records</li>
+<li>What TTL means</li>
+<li>Why DNS primarily uses UDP</li>
+<li>Why DNS issues are hard to debug</li>
+</ul>
+
+
+  </div>
 
   <footer class="post-footer">
     <ul class="post-tags">

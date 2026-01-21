@@ -4,6 +4,12 @@ date: 2026-01-19
 type: page
 ---
 
+In this phase, we build the foundation of networking by understanding what networks are and how devices communicate.
+
+You’ll learn what hosts, IP addresses, clients, and servers really mean, and how simple request–response communication powers almost everything on the internet.
+
+---
+
 ### <font color="BlueViolet">1️⃣ What Is a Network?</font>
 
 #### Simple definition:
@@ -27,6 +33,7 @@ Think of a network like a postal system:
 - Post office = router  
 
 ---
+
 
 ### <font color="BlueViolet"> 2️⃣ What Is a Host?</font>
 

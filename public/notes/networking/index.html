@@ -140,18 +140,64 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">Phase 3 : TCP/IP and ports
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>This phase is where networking becomes practical and real. We focus on how data actually moves between devices.
+You’ll learn why TCP and UDP exist, how ports work, and how reliable and fast communication is achieved between clients and servers in the real world.
+1️⃣ Why TCP/IP Exists IP (Layer 3) can only do one thing:
+Deliver packets from one IP to another IP Problems with IP alone:
+No guarantee of delivery No ordering of packets No error recovery Because of these limitations, we need Transport Layer protocols.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-01-21 00:00:00 +0000 UTC'>January 21, 2026</span>&nbsp;·&nbsp;<span>Ankur Singh</span></footer>
+  <a class="entry-link" aria-label="post link to Phase 3 : TCP/IP and ports" href="http://localhost:1313/notes/networking/phase3-tcp-ip-ports/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Phase 4 – DNS (Domain Name System)
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> DNS is one of the most critical systems on the internet.
+If DNS fails, everything appears broken — even when the network is perfectly fine.
+In this phase, we focus on DNS — the quiet system that makes the internet usable for humans.
+You’ll learn how domain names are translated into IP addresses, what actually happens when you type a website into your browser, and how DNS queries move across multiple servers behind the scenes.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-01-21 00:00:00 +0000 UTC'>January 21, 2026</span>&nbsp;·&nbsp;<span>Ankur Singh</span></footer>
+  <a class="entry-link" aria-label="post link to Phase 4 – DNS (Domain Name System)" href="http://localhost:1313/notes/networking/phase4-dns-name-resolution/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Phase 5 : Routing, Gateway and NAT
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Phase 5 focuses on how networks communicate.
+It covers routing, which directs traffic between networks; gateways, which connect different network types; and NAT (Network Address Translation), which lets multiple devices share a single IP while keeping internal addresses private.
+1️⃣ What Is Routing? Definition: Routing is the process of deciding where to send a packet next.
+Every packet asks: “How do I reach this destination IP?”
+The answer comes from a routing table.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-01-21 00:00:00 +0000 UTC'>January 21, 2026</span>&nbsp;·&nbsp;<span>Ankur Singh</span></footer>
+  <a class="entry-link" aria-label="post link to Phase 5 : Routing, Gateway and NAT" href="http://localhost:1313/notes/networking/phase5-routing-gateway-nat/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">Phase 2 : IP and Subnetting
     </h2>
   </header>
   <div class="entry-content">
-    <p>IP Addresses (The Heart of Networking) What Is an IP Address An IP address is a logical identifier that tells the network:
+    <p>In this phase, we explore IP addresses and subnetting — the part of networking that explains how devices are identified and grouped together.
+You’ll understand what IP addresses represent, why networks are divided into subnets, and how this structure makes large networks possible and manageable.
+IP Addresses (The Heart of Networking) What Is an IP Address An IP address is a logical identifier that tells the network:
 Who you are Where you are Example: 192.168.1.10
-Mental model: Country → City → Street → House number
-IPv4 Basics IPv4 format: A.B.C.D
-Each number:
-Range: 0–255 Called an octet Structure:
-4 octets 32 total bits Example: 192.168.1.10
-Public vs Private IP Addresses 1. Private IPs (Internal Use) Reserved ranges: 10.0.0.0/8 172.16.0.0/12 192.168.0.0/16 Used in: Home networks Office networks Cloud VPCs Properties: Reused everywhere Exist simultaneously in millions of networks Not globally routable Private IPs cannot be reached directly from the internet.
 ...</p>
   </div>
   <footer class="entry-footer"><span title='2026-01-20 00:00:00 +0000 UTC'>January 20, 2026</span>&nbsp;·&nbsp;<span>Ankur Singh</span></footer>
@@ -160,54 +206,18 @@ Public vs Private IP Addresses 1. Private IPs (Internal Use) Reserved ranges: 10
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">Phase 3 : TCP/IP and ports
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p></p>
-  </div>
-  <footer class="entry-footer"><span title='2026-01-20 00:00:00 +0000 UTC'>January 20, 2026</span>&nbsp;·&nbsp;<span>Ankur Singh</span></footer>
-  <a class="entry-link" aria-label="post link to Phase 3 : TCP/IP and ports" href="http://localhost:1313/notes/networking/phase3-tcp-ip-ports/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
     <h2 class="entry-hint-parent">Phase 1 : Core networking concepts
     </h2>
   </header>
   <div class="entry-content">
-    <p>1️⃣ What Is a Network? Simple definition: A network is a group of devices that can communicate with each other.
+    <p>In this phase, we build the foundation of networking by understanding what networks are and how devices communicate.
+You’ll learn what hosts, IP addresses, clients, and servers really mean, and how simple request–response communication powers almost everything on the internet.
+1️⃣ What Is a Network? Simple definition: A network is a group of devices that can communicate with each other.
 Examples of devices: Laptop Phone Server Printer Router “If devices can send and receive data, they are on a network.”
-Real-life analogy Think of a network like a postal system:
-Houses = devices Addresses = IP addresses Letters = data Post office = router 2️⃣ What Is a Host? Definition: A host is any device that can send or receive data on a network.
 ...</p>
   </div>
   <footer class="entry-footer"><span title='2026-01-19 00:00:00 +0000 UTC'>January 19, 2026</span>&nbsp;·&nbsp;<span>Ankur Singh</span></footer>
   <a class="entry-link" aria-label="post link to Phase 1 : Core networking concepts" href="http://localhost:1313/notes/networking/phase1-core-ntw-concepts/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p></p>
-  </div>
-  <footer class="entry-footer"><span>Ankur Singh</span></footer>
-  <a class="entry-link" aria-label="post link to " href="http://localhost:1313/notes/networking/phase4-dns-name-resolution/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p></p>
-  </div>
-  <footer class="entry-footer"><span>Ankur Singh</span></footer>
-  <a class="entry-link" aria-label="post link to " href="http://localhost:1313/notes/networking/phase5-routing-gateway-nat/"></a>
 </article>
 
 <article class="post-entry"> 

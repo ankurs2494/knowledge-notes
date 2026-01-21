@@ -4,6 +4,12 @@ date: 2026-01-20
 type: page
 ---
 
+In this phase, we explore IP addresses and subnetting — the part of networking that explains how devices are identified and grouped together.
+
+You’ll understand what IP addresses represent, why networks are divided into subnets, and how this structure makes large networks possible and manageable.
+
+---
+
 ### <font color="orange">IP Addresses (The Heart of Networking)</font>
 
 
