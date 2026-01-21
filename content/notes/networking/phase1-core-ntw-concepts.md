@@ -4,7 +4,7 @@ date: 2026-01-19
 type: page
 ---
 
-### 1️⃣ What Is a Network?
+### <font color="BlueViolet">1️⃣ What Is a Network?</font>
 
 #### Simple definition:
 A network is a group of devices that can communicate with each other.
@@ -28,7 +28,7 @@ Think of a network like a postal system:
 
 ---
 
-### 2️⃣ What Is a Host?
+### <font color="BlueViolet"> 2️⃣ What Is a Host?</font>
 
 #### Definition:
 A host is any device that can send or receive data on a network.
@@ -45,7 +45,7 @@ A host is any device that can send or receive data on a network.
 
 ---
 
-### 3️⃣ What Is an IP Address?
+### <font color="BlueViolet"> 3️⃣ What Is an IP Address?</font>
 
 #### Definition:
 An IP address is a unique identifier for a host on a network.
@@ -64,9 +64,9 @@ An IP address is a unique identifier for a host on a network.
 - Network knows where to send data  
 - Without IPs → no communication  
 
-<font color="green"> 💡 Key idea:</font> IP = identity + location of a host  
+<font color="green"> Key idea:</font> IP = identity + location of a host  
 
-### 4️⃣ What Is a Network (Deeper)?
+### <font color="BlueViolet"> 4️⃣ What Is a Network (Deeper)?</font>
 
 #### A network is:
 - Hosts  
@@ -81,7 +81,7 @@ An IP address is a unique identifier for a host on a network.
 
 ---
 
-### 5️⃣ Why Do Networks Exist?
+### <font color="BlueViolet"> 5️⃣ Why Do Networks Exist?</font>
 
 #### Networks exist to:
 - Share information  
@@ -102,7 +102,7 @@ An IP address is a unique identifier for a host on a network.
 
 ---
 
-### 6️⃣ Client ↔ Server (VERY IMPORTANT)
+### <font color="BlueViolet"> 6️⃣ Client ↔ Server</font> <font color="red">(VERY IMPORTANT)</font>
 
 #### Client
 A device that requests something  
@@ -134,7 +134,7 @@ A device that responds to requests
 
 ---
 
-### 7️⃣ Request ↔ Response
+### <font color="BlueViolet">7️⃣ Request ↔ Response</font>
 
 Every network communication follows this pattern:
 
@@ -155,7 +155,7 @@ Every network communication follows this pattern:
 
 ---
 
- ### 8️⃣ The Internet (Demystified)
+ ### <font color="BlueViolet">8️⃣ The Internet</font>
 
 - The internet is not magic.  
 - The internet is simply millions of networks connected together.  
@@ -169,7 +169,7 @@ Every network communication follows this pattern:
 
 ---
 
-### 9️⃣ The One Rule to Remember
+### <font color="BlueViolet">9️⃣ The One Rule to Remember</font>
 
 Every network problem is about:
 
@@ -179,7 +179,7 @@ Every network problem is about:
 
 --- 
 
-###  Mental Model (Lock This In)
+###  <font color="teal">Mental Model (Lock This In)</font>
 ```
 [ Client Host ]  
       |  
@@ -192,11 +192,11 @@ Every network problem is about:
 [ Client Host ]  
 ```
 
- <font color="blue">Everything else in networking builds on this. </font> 
+ <font color="DarkSlateGrey">Everything else in networking builds on this. </font> 
 
 ---
 
-### <font color="gray">Check Your Understanding</font>
+### <font color="Tomato">Check Your Understanding</font>
 
 You should be able to answer:
 
@@ -211,9 +211,8 @@ If these feel obvious, you’re ready for the next step.
 
 ## <font color="orange">Learn the OSI Model (Very Important)</font>
 
-OSI Model (Open Systems Interconnection)
 
-### What is OSI model?
+### What is OSI (Open Systems Interconnection) model?
 
 - A framework to understand how data travels from one host to another over a network.  
 - It has 7 layers, each with a specific role. Think of it as a stack of responsibilities.  
@@ -312,19 +311,30 @@ OSI Model (Open Systems Interconnection)
 
 ---
 
-### 🔗 Putting it all together
 
-image.png  
+### <font color="teal">🔗 Putting it all together</font>
+
+
+| Layer | Role | Examples / Concepts |
+|-------|------|--------------------|
+| 7 – Application | Interface for users & applications | HTTP, HTTPS, FTP, Browser, Email client |
+| 6 – Presentation | Formats & translates data | TLS/SSL, ASCII/UTF-8, gzip |
+| 5 – Session | Manages sessions between hosts | Login sessions, API sessions |
+| 4 – Transport | Ensures reliable delivery | TCP (reliable), UDP (fast), Ports, Segmentation |
+| 3 – Network | Moves packets from source to destination | IP (IPv4/IPv6), ICMP, Routing |
+| 2 – Data Link | Transmits data within local network | MAC address, Switches, Frames |
+| 1 – Physical | Physical transmission of bits | Ethernet, Fiber, Wi-Fi, Electrical/Optical bits |
+
 
 ---
 
-### 💡 <font color="green">Key Takeaways</font>
+### <font color="green">Key Takeaways</font>
 
 **Data flows from**  
 - Layer 7 → Layer 1 on sender  
 - Layer 1 → Layer 7 on receiver.  
 
-TCP/IP maps roughly to OSI, but OSI helps understand where issues happen.  
+> TCP/IP maps roughly to OSI, but OSI helps understand where issues happen.  
 
 **If a website doesn’t load, you can reason:** 
 - Is it DNS (Layer 7)?  

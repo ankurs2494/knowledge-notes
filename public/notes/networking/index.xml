@@ -69,10 +69,10 @@
     </item>
     <item>
       <title>Phase 1 : Core networking concepts</title>
-      <link>http://localhost:1313/notes/networking/-phase1-core-ntw-concepts/</link>
+      <link>http://localhost:1313/notes/networking/phase1-core-ntw-concepts/</link>
       <pubDate>Mon, 19 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/notes/networking/-phase1-core-ntw-concepts/</guid>
-      <description>&lt;h3 id=&#34;1-what-is-a-network&#34;&gt;1️⃣ What Is a Network?&lt;/h3&gt;
+      <guid>http://localhost:1313/notes/networking/phase1-core-ntw-concepts/</guid>
+      <description>&lt;h3 id=&#34;1-what-is-a-network&#34;&gt;&lt;font color=&#34;BlueViolet&#34;&gt;1️⃣ What Is a Network?&lt;/font&gt;&lt;/h3&gt;
 &lt;h4 id=&#34;simple-definition&#34;&gt;Simple definition:&lt;/h4&gt;
 &lt;p&gt;A network is a group of devices that can communicate with each other.&lt;/p&gt;
 &lt;h4 id=&#34;examples-of-devices&#34;&gt;Examples of devices:&lt;/h4&gt;
@@ -95,7 +95,7 @@
 &lt;li&gt;Post office = router&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;h3 id=&#34;2-what-is-a-host&#34;&gt;2️⃣ What Is a Host?&lt;/h3&gt;
+&lt;h3 id=&#34;2-what-is-a-host&#34;&gt;&lt;font color=&#34;BlueViolet&#34;&gt; 2️⃣ What Is a Host?&lt;/font&gt;&lt;/h3&gt;
 &lt;h4 id=&#34;definition&#34;&gt;Definition:&lt;/h4&gt;
 &lt;p&gt;A host is any device that can send or receive data on a network.&lt;/p&gt;</description>
     </item>
