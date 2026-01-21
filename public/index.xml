@@ -6,13 +6,72 @@
     <description>Recent content on My Tech Knowledge Notes</description>
     <generator>Hugo -- 0.154.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 19 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 20 Jan 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Phase 2 : IP and Subnetting</title>
+      <link>http://localhost:1313/notes/networking/phase2-ip-and-subnetting/</link>
+      <pubDate>Tue, 20 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/networking/phase2-ip-and-subnetting/</guid>
+      <description>&lt;h3 id=&#34;ip-addresses-the-heart-of-networking&#34;&gt;&lt;font color=&#34;orange&#34;&gt;IP Addresses (The Heart of Networking)&lt;/font&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;what-is-an-ip-address&#34;&gt;&lt;font color=&#34;blue&#34;&gt;What Is an IP Address&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;An IP address is a logical identifier that tells the network:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Who you are&lt;/li&gt;
+&lt;li&gt;Where you are&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt; 192.168.1.10&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Mental model:&lt;/strong&gt; Country → City → Street → House number&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;ipv4-basics&#34;&gt;&lt;font color=&#34;blue&#34;&gt;IPv4 Basics&lt;/font&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;IPv4 format:&lt;/strong&gt; A.B.C.D&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Each number:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Range: 0–255&lt;/li&gt;
+&lt;li&gt;Called an octet&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Structure:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;4 octets&lt;/li&gt;
+&lt;li&gt;32 total bits&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt; 192.168.1.10&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;public-vs-private-ip-addresses&#34;&gt;&lt;font color=&#34;blue&#34;&gt;Public vs Private IP Addresses&lt;/font&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;1-private-ips-internal-use&#34;&gt;1. Private IPs (Internal Use)&lt;/h3&gt;
+&lt;h4 id=&#34;reserved-ranges&#34;&gt;Reserved ranges:&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;10.0.0.0/8&lt;/li&gt;
+&lt;li&gt;172.16.0.0/12&lt;/li&gt;
+&lt;li&gt;192.168.0.0/16&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;used-in&#34;&gt;Used in:&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Home networks&lt;/li&gt;
+&lt;li&gt;Office networks&lt;/li&gt;
+&lt;li&gt;Cloud VPCs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;properties&#34;&gt;Properties:&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Reused everywhere&lt;/li&gt;
+&lt;li&gt;Exist simultaneously in millions of networks&lt;/li&gt;
+&lt;li&gt;Not globally routable&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Private IPs cannot be reached directly from the internet.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Phase 3 : TCP/IP and ports</title>
+      <link>http://localhost:1313/notes/networking/phase3-tcp-ip-ports/</link>
+      <pubDate>Tue, 20 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/networking/phase3-tcp-ip-ports/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Phase 1 : Core networking concepts</title>
-      <link>http://localhost:1313/notes/networking/learning_networks/</link>
+      <link>http://localhost:1313/notes/networking/-phase1-core-ntw-concepts/</link>
       <pubDate>Mon, 19 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/notes/networking/learning_networks/</guid>
+      <guid>http://localhost:1313/notes/networking/-phase1-core-ntw-concepts/</guid>
       <description>&lt;h3 id=&#34;1-what-is-a-network&#34;&gt;1️⃣ What Is a Network?&lt;/h3&gt;
 &lt;h4 id=&#34;simple-definition&#34;&gt;Simple definition:&lt;/h4&gt;
 &lt;p&gt;A network is a group of devices that can communicate with each other.&lt;/p&gt;
@@ -126,6 +185,34 @@
 &lt;/ul&gt;
 &lt;blockquote&gt;
 &lt;p&gt;“There are only two hard things in Computer Science: cache invalidation and naming things.”&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/notes/networking/phase4-dns-name-resolution/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/networking/phase4-dns-name-resolution/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/notes/networking/phase5-routing-gateway-nat/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/networking/phase5-routing-gateway-nat/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/notes/networking/phase6-firewall-ntw-security-basic/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/networking/phase6-firewall-ntw-security-basic/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/notes/networking/phase7-end-end-troubleshotting-mental-model/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/networking/phase7-end-end-troubleshotting-mental-model/</guid>
+      <description></description>
     </item>
   </channel>
 </rss>

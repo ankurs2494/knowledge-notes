@@ -179,7 +179,7 @@ Every network problem is about:
 
 --- 
 
-### 🧠 Mental Model (Lock This In)
+###  Mental Model (Lock This In)
 ```
 [ Client Host ]  
       |  
@@ -196,7 +196,7 @@ Every network problem is about:
 
 ---
 
-### ✅ Check Your Understanding
+### <font color="gray">Check Your Understanding</font>
 
 You should be able to answer:
 
@@ -209,7 +209,7 @@ You should be able to answer:
 If these feel obvious, you’re ready for the next step.  
 
 
-## Learn the OSI Model (Very Important)
+## <font color="orange">Learn the OSI Model (Very Important)</font>
 
 OSI Model (Open Systems Interconnection)
 
@@ -220,7 +220,7 @@ OSI Model (Open Systems Interconnection)
 
 ---
 
-### Layer 7 – Application Layer
+### <font color="blue">Layer 7 – Application Layer</font>
 
 **Role:** The interface for users and applications.  
 **Analogy:** The “letter writer” in our postal system.  
@@ -232,7 +232,7 @@ OSI Model (Open Systems Interconnection)
 
 ---
 
-### Layer 6 – Presentation Layer
+### <font color="blue">Layer 6 – Presentation Layer</font>
 **Role:** Formats and translates data.  
 **Analogy:** “Translator & Envelope maker”  
 **Examples:** 
@@ -244,7 +244,7 @@ OSI Model (Open Systems Interconnection)
 
 ---
 
-### Layer 5 – Session Layer
+### <font color="blue">Layer 5 – Session Layer</font>
 **Role:** Manages communication sessions between hosts.  
 **Analogy:** “Conversation manager”  
 **Examples:**
@@ -255,7 +255,7 @@ OSI Model (Open Systems Interconnection)
 
 ---
 
-### Layer 4 – Transport Layer
+### <font color="blue">Layer 4 – Transport Layer</font>
 **Role:** Ensures reliable delivery of data between hosts.  
 **Analogy:** “The delivery service”  
 **Protocols:**
@@ -272,7 +272,7 @@ OSI Model (Open Systems Interconnection)
 
 ---
 
-### Layer 3 – Network Layer
+### <font color="blue">Layer 3 – Network Layer</font>
 **Role:** Moves packets from source to destination across networks.  
 **Analogy:** “The postal service routing letters”  
 **Protocols:**
@@ -288,7 +288,7 @@ OSI Model (Open Systems Interconnection)
 
 ----
 
-### Layer 2 – Data Link Layer
+### <font color="blue">Layer 2 – Data Link Layer</font>
 **Role:** Transmits data within a local network.  
 **Analogy:** Mail carrier within the neighborhood.  
 **Components:**
@@ -301,7 +301,7 @@ OSI Model (Open Systems Interconnection)
 
 ----
 
- ### Layer 1 – Physical Layer
+ ### <font color="blue">Layer 1 – Physical Layer</font>
 **Role:** The physical transmission of bits.  
 **Analogy:** “The roads, cables, and signals”  
 **Components:**
@@ -318,7 +318,7 @@ image.png
 
 ---
 
-### 💡 <font color="Blue">Key Takeaways</font>
+### 💡 <font color="green">Key Takeaways</font>
 
 **Data flows from**  
 - Layer 7 → Layer 1 on sender  
@@ -334,7 +334,7 @@ TCP/IP maps roughly to OSI, but OSI helps understand where issues happen.
 
 ---
 
-### 🧠 Mental Model (Simple Analogy)
+### <font color="teal">Mental Model</font> (Simple Analogy)
 
 - [Application] → Browser writes request  
 - [Presentation] → Encrypt/format it  
@@ -348,7 +348,7 @@ TCP/IP maps roughly to OSI, but OSI helps understand where issues happen.
 
 ---
 
-### ✅ Exercise to Solidify OSI
+### <font color="teal">Exercise to Solidify OSI</font>
 
 - Open a browser → request google.com  
 - Trace the layers mentally:  
